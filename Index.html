@@ -4,15 +4,81 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Portfolio Page Template</title>
+    <title>Yugen Fine Art Photography</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      /* Custom Styling */
+      body {
+        font-family: "Georgia", serif;
+        background-color: #f9f8f7;
+        color: #5a5a5a;
+      }
+      .navbar {
+        background-color: #8b5e83;
+      }
+      .navbar-brand, .nav-link {
+        font-family: "Playfair Display", serif;
+        color: #ffffff !important;
+      }
+      .jumbotron {
+        background: url('images/Shared/jumbotron.png') center/cover no-repeat;
+        color: #8b5e83;
+        padding: 3rem 2rem;
+      }
+      .jumbotron h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1.3;
+      }
+      .jumbotron p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+      }
+      .btn-primary {
+        background-color: #8b5e83;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #6a4664;
+      }
+      h2, h3, h4 {
+        color: #8b5e83;
+        font-family: "Playfair Display", serif;
+      }
+      .img-fluid {
+        transition: transform 0.3s ease-in-out;
+      }
+      .img-fluid:hover {
+        transform: scale(1.05);
+      }
+      footer {
+        background-color: #8b5e83;
+        color: #ffffff;
+        padding: 1rem 0;
+      }
+      footer p, footer a {
+        margin: 0;
+        color: #ffffff;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        .jumbotron, section {
+          padding: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">Yugen Photography</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -20,180 +86,70 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <a class="nav-link" href="#">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <a class="btn btn-primary btn-lg" href="contact.html" role="button">Book Now</a>
       </div>
     </nav>
     <section>
-      <div class="jumbotron text-center mt-2">
+      <div class="jumbotron text-center">
         <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h1>Lorem ipsum dolor sit.</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, deleniti, ea nisi suscipit atque tempore aspernatur harum unde veritatis neque rem dolores assumenda. Recusandae facilis dolores cum iste assumenda accusamus.</p>
-              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-            </div>
-          </div>
+          <h1>Yugen Fine Art Photography</h1>
+          <p>Yugen (幽玄) embodies the profound beauty of the mysterious and the subtle. At Yugen Fine Art Photography, we bring this philosophy to life through intimate and artistic portraits celebrating confidence, elegance, and the miracle of life.</p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
         </div>
       </div>
     </section>
     <section>
       <div class="container">
+        <div class="text-center mb-4">
+          <h2>Celebrating Beauty and Grace</h2>
+          <p>Each portrait tells a story of confidence, beauty, and timeless artistry.</p>
+        </div>
         <div class="row">
-          <div class="col-12 text-center">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni, doloribus, possimus eum sapiente deleniti doloremque fugit ut expedita molestiae iusto debitis eveniet modi obcaecati ipsam quos quis labore dicta.</p>
+          <!-- Artful Intimacy Section -->
+          <div class="col-md-6 text-center">
+            <img class="img-fluid rounded" src="images/Boudoir/Kimberly/Kimberly, Fine Art Nude (by YugenPhotog).jpg" alt="Kimberly, Fine Art Nude (by YugenPhotog)" style="max-width: 100%; height: auto;">
+            <h4>Artful Intimacy</h4>
+            <p>Celebrating the grace, strength, and beauty within every woman through timeless fine art photography.</p>
+          </div>
+          <!-- Motherhood: A Work of Art Section -->
+          <div class="col-md-6 text-center">
+            <img class="img-fluid rounded" src="images/Maternity/Abby/SLA_4607.jpg" alt="The Glow of Creation - A Mother’s Radiance, by (c) Steven Austin" style="max-width: 100%; height: auto;">
+            <h4>Motherhood: A Work of Art</h4>
+            <p>Showcasing the beauty, strength, and love that define this incredible journey.</p>
           </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="container mt-2">
-        <div class="row">
-          <div class="col-md-4 col-12">
-            <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="images/35X35.gif" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-12">
-            <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="images/35X35.gif" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-12">
-            <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="images/35X35.gif" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                </div>
-              </li>
-            </ul>
-          </div>
+      <div class="container my-4">
+        <div class="text-center">
+          <h3>Our Philosophy</h3>
         </div>
+        <blockquote>
+          At Yugen Fine Art Photography, we believe in the inherent beauty and divinity of the human form. As beings created in God’s image, the body is a profound work of art—deserving of celebration, not concealment.
+        </blockquote>
+        <p>We are inspired by the miracle of pregnancy and childbirth—a sacred gift from God that reflects the wonder of creation. Through our maternity photography, we honor this transformative journey, capturing the strength, beauty, and love that define motherhood.</p>
+        <p>Your privacy, comfort, and trust are at the heart of everything we do. We promise that your photographs will never be shared without your explicit consent. To ensure your peace of mind, we welcome you to bring a companion to your session.</p>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h2>Latest Work</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, et, placeat !</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-12 text-center">
-            <img class="img-fluid" src="images/400x400.gif" alt="">
-            <h4>Lorem ipsum dolor sit amet, consectetur elit</h4>
-            <h6>Lorem ipsum dolor sit amet, consectetur elit</h6>
-          </div>
-          <div class="col-md-6 col-12 text-center mt-md-0 mt-2">
-            <img class="img-fluid" src="images/400x400.gif" alt="">
-            <h4>Lorem ipsum dolor sit amet, consectetur elit</h4>
-            <h6>Lorem ipsum dolor sit amet, consectetur elit</h6>
-          </div>
-        </div>
-        <div class="row mt-2">
-          <div class="col-md-3 col-6"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
-          <div class="col-md-3 col-6"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
-          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
-          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-3 col-6"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
-          <div class="col-md-3 col-6"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
-          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-right" src="images/200x200.gif" alt=""></div>
-          <div class="col-md-3 col-6 mt-md-0 mt-1"><img class="img-fluid float-left" src="images/200x200.gif" alt=""></div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, magni, doloribus, possimus eum sapiente deleniti doloremque fugit ut expedita molestiae iusto debitis eveniet modi obcaecati ipsam quos quis labore dicta.</p>
-            <button type="button" class="btn btn-success">Get in touch</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-12">
-            <h3 class="text-center">WHO WE ARE</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, ducimus, sit, quibusdam quidem recusandae veniam eos quod error nisi repellat excepturi laboriosam aspernatur suscipit possimus consectetur dolores nihil labore quas eius illo accusamus nulla sed blanditiis porro accusantium. Perspiciatis, perferendis!</p>
-          </div>
-          <div class="col-md-4 col-12">
-            <h3 class="text-center">GET IN TOUCH</h3>
-            <address class="text-center">
-              <strong>MyCompany, Inc.</strong><br>
-              Sunny Autumn Plaza, Grand Coulee,<br>
-              CA, 91308-4075, US<br>
-              <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
-          </div>
-          <div class="col-md-4 col-12">
-            <h3 class="text-center">NEWSLETTER</h3>
-            <form>
-              <div class="form-group col-12">
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                <button type="submit" class="btn btn-dark mt-2">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
     <footer class="text-center">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p>Copyright © MyCompany. All rights reserved.</p>
-          </div>
-        </div>
+        <p>&copy; Yugen Photography. All rights reserved.</p>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white ml-3"><i class="fab fa-facebook"></i></a>
       </div>
     </footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery and Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
   </body>
