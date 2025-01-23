@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - Yugen Fine Art Photography</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      /* Custom Styling */
+      body {
+        font-family: "Georgia", serif;
+        background-color: #f9f8f7;
+        color: #5a5a5a;
+      }
+      .navbar {
+        background-color: #8b5e83;
+      }
+      .navbar-brand, .nav-link {
+        font-family: "Playfair Display", serif;
+        color: #ffffff !important;
+      }
+      h2, h3, h4 {
+        color: #8b5e83;
+        font-family: "Playfair Display", serif;
+      }
+      .portfolio-section {
+        margin: 2rem 0;
+      }
+      .portfolio-section img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+      }
+      .portfolio-section img:hover {
+        transform: scale(1.05);
+      }
+      footer {
+        background-color: #8b5e83;
+        color: #ffffff;
+        padding: 1rem 0;
+      }
+      footer p, footer a {
+        margin: 0;
+        color: #ffffff;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">Yugen Photography</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="portfolio-section">
+      <div class="container text-center">
+        <h2>Artful Intimacy&nbsp;&nbsp;</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/fine-art-nude1.jpg" alt="Fine Art Nude 1">
+          </div>
+          <div class="col-md-4">
+            <img src="images/fine-art-nude2.jpg" alt="Fine Art Nude 2">
+          </div>
+          <div class="col-md-4">
+            <img src="images/fine-art-nude3.jpg" alt="Fine Art Nude 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="container text-center">
+        <h2>Maternity</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/maternity1.jpg" alt="Maternity 1">
+          </div>
+          <div class="col-md-4">
+            <img src="images/maternity2.jpg" alt="Maternity 2">
+          </div>
+          <div class="col-md-4">
+            <img src="images/maternity3.jpg" alt="Maternity 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; Yugen Photography. All rights reserved.</p>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white ml-3"><i class="fab fa-facebook"></i></a>
+      </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>
