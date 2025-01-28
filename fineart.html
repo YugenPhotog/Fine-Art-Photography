@@ -26,17 +26,16 @@
         color: #e6d5ea;
         font-family: "Playfair Display", serif;
       }
-      /* Carousel Styling */
       .carousel-item img {
         display: block;
-        margin: 0 auto; /* Center the images horizontally */
-        width: auto; /* Maintain aspect ratio */
-        height: 90vh; /* Fit within the viewport */
-        object-fit: contain; /* Prevent cropping */
+        margin: 0 auto;
+        width: auto;
+        height: 90vh;
+        object-fit: contain;
       }
       .carousel-control-prev-icon,
       .carousel-control-next-icon {
-        background-color: #8b5e83; /* Match navigation arrows with the theme */
+        background-color: #8b5e83;
         border-radius: 50%;
         padding: 10px;
       }
@@ -52,32 +51,37 @@
       footer a:hover {
         text-decoration: underline;
       }
-		 	/* Responsive Image Styling */
-      img {
-        max-width: 100%; /* Prevent images from overflowing */
-        height: auto;    /* Maintain aspect ratio */
+      /* Age Verification Popup */
+      #ageVerification {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
       }
-      .carousel-inner img {
-        max-height: 90vh;   /* Ensure images fit within viewport height */
-        object-fit: contain; /* Prevent cropping */
+      #ageVerification p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-align: center;
       }
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        background-color: #8b5e83; /* Match navigation arrows with theme */
-        border-radius: 50%;
-        padding: 10px;
-      }
-      footer {
+      #ageVerification button {
+        padding: 10px 20px;
+        font-size: 1rem;
         background-color: #8b5e83;
-        color: #ffffff;
-        padding: 1rem 0;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
       }
-      footer p, footer a {
-        margin: 0;
-        color: #ffffff;
-      }
-      footer a:hover {
-        text-decoration: underline;
+      #ageVerification button:hover {
+        background-color: #6a4671;
       }
       @media (max-width: 768px) {
         .jumbotron, section {
@@ -90,34 +94,42 @@
     </style>
   </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="boudoir.html">Artful Intimacy</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="miracle.html">Miracle of Life</a>
-      </li>
-    </ul>
-     </div>
-</nav>
+    <div id="ageVerification">
+      <p>
+        This site contains fine art photography, including depictions of nudity. 
+        You must be 18 years or older to enter. By proceeding, you confirm you are at least 18 years old.
+      </p>
+      <button id="confirmAge">I Am Over 18</button>
+    </div>
 
-     <section class="text-center my-5">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="boudoir.html">Artful Intimacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="miracle.html">Miracle of Life</a>
+          </li>
+        </ul>
+     </div>
+    </nav>
+
+    <section class="text-center my-5">
       <div class="container"> 
-	<h1>Yugen Fine Art</h1>
-      <p>Artistry that Speaks without Words</p>
-		   </div>
+        <h1>Yugen Fine Art</h1>
+        <p>Artistry that Speaks without Words</p>
+      </div>
     </section>
 
     <main>
@@ -169,9 +181,30 @@
     </footer>
 
 
-<!-- jQuery and Bootstrap JS -->
+    <!-- jQuery and Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
+
+    <!-- Disable Right-Click -->
+    <script>
+      document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+      });
+    </script>
+
+    <!-- Age Verification Script -->
+    <script>
+      document.getElementById("confirmAge").addEventListener("click", function() {
+        localStorage.setItem("ageVerified", "true");
+        document.getElementById("ageVerification").style.display = "none";
+      });
+
+      window.onload = function() {
+        if (localStorage.getItem("ageVerified") === "true") {
+          document.getElementById("ageVerification").style.display = "none";
+        }
+      };
+    </script>
   </body>
 </html>
