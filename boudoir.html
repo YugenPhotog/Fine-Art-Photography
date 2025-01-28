@@ -172,6 +172,16 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
+	  
+	  <script>
+  // Disable right-click on carousel images
+  document.querySelectorAll('.carousel-item img').forEach(function(image) {
+    image.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  });
+</script>
+
 
     <!-- Age Verification Script -->
     <script>
