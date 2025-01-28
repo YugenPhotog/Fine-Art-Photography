@@ -8,13 +8,12 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
+     <style>
       /* General Styling */
       body {
         font-family: "Georgia", serif;
-        background-color: #f9f8f7;
-        color: #5a5a5a;
-        margin: 0;
+        background-color: #3b2f3a; /* Dark grey with a hint of purple */
+        color: #f4f4f4;
       }
       .navbar {
         background-color: #8b5e83;
@@ -23,50 +22,70 @@
         font-family: "Playfair Display", serif;
         color: #ffffff !important;
       }
-      h1, h2, h3 {
-        color: #8b5e83;
+      h1, h2, h3, h4 {
+        color: #e6d5ea;
         font-family: "Playfair Display", serif;
-        text-align: center;
       }
-      h1 {
-        font-size: 3rem;
-        margin-top: 2rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 1rem;
-      }
-      .content {
-        max-width: 900px;
-        margin: 2rem auto;
-        padding: 1rem;
-        text-align: justify;
-        line-height: 1.8;
-      }
+      /* Carousel Styling */
       .carousel-item img {
         display: block;
-        margin: 0 auto;
-        width: auto;
-        height: 90vh;
-        object-fit: contain;
+        margin: 0 auto; /* Center the images horizontally */
+        width: auto; /* Maintain aspect ratio */
+        height: 90vh; /* Fit within the viewport */
+        object-fit: contain; /* Prevent cropping */
       }
-      @media screen and (max-height: 900px) {
-        .carousel-item img {
-          height: 60vh;
-        }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #8b5e83; /* Match navigation arrows with the theme */
+        border-radius: 50%;
+        padding: 10px;
       }
       footer {
         background-color: #8b5e83;
         color: #ffffff;
         padding: 1rem 0;
-        text-align: center;
       }
-      footer a {
+      footer p, footer a {
         color: #ffffff;
-        margin: 0 0.5rem;
+        margin: 0;
       }
       footer a:hover {
         text-decoration: underline;
+      }
+		 	/* Responsive Image Styling */
+      img {
+        max-width: 100%; /* Prevent images from overflowing */
+        height: auto;    /* Maintain aspect ratio */
+      }
+      .carousel-inner img {
+        max-height: 90vh;   /* Ensure images fit within viewport height */
+        object-fit: contain; /* Prevent cropping */
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #8b5e83; /* Match navigation arrows with theme */
+        border-radius: 50%;
+        padding: 10px;
+      }
+      footer {
+        background-color: #8b5e83;
+        color: #ffffff;
+        padding: 1rem 0;
+      }
+      footer p, footer a {
+        margin: 0;
+        color: #ffffff;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        .jumbotron, section {
+          padding: 1rem;
+        }
+        .carousel-inner img {
+          max-height: 70vh; /* Reduce height for smaller devices */
+        }
       }
     </style>
   </head>
@@ -94,10 +113,12 @@
      </div>
 </nav>
 
-<header>
-      <h1>Yugen Fine Art</h1>
-      <h2>Artistry that Speaks without Words</h2>
-    </header>
+     <section class="text-center my-5">
+      <div class="container"> 
+	<h1>Yugen Fine Art</h1>
+      <p>Artistry that Speaks without Words</p>
+		   </div>
+    </section>
 
     <main>
       <!-- Carousel Section -->

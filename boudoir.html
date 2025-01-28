@@ -12,8 +12,8 @@
       /* General Styling */
       body {
         font-family: "Georgia", serif;
-        background-color: #f9f8f7;
-        color: #5a5a5a;
+        background-color: #3b2f3a; /* Dark grey with a hint of purple */
+        color: #f4f4f4;
       }
       .navbar {
         background-color: #8b5e83;
@@ -23,7 +23,7 @@
         color: #ffffff !important;
       }
       h1, h2, h3, h4 {
-        color: #8b5e83;
+        color: #e6d5ea;
         font-family: "Playfair Display", serif;
       }
       /* Carousel Styling */
@@ -33,6 +33,12 @@
         width: auto; /* Maintain aspect ratio */
         height: 90vh; /* Fit within the viewport */
         object-fit: contain; /* Prevent cropping */
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #8b5e83; /* Match navigation arrows with the theme */
+        border-radius: 50%;
+        padding: 10px;
       }
       footer {
         background-color: #8b5e83;
@@ -46,31 +52,68 @@
       footer a:hover {
         text-decoration: underline;
       }
+		
+			/* Responsive Image Styling */
+      img {
+        max-width: 100%; /* Prevent images from overflowing */
+        height: auto;    /* Maintain aspect ratio */
+      }
+      .carousel-inner img {
+        max-height: 90vh;   /* Ensure images fit within viewport height */
+        object-fit: contain; /* Prevent cropping */
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #8b5e83; /* Match navigation arrows with theme */
+        border-radius: 50%;
+        padding: 10px;
+      }
+      footer {
+        background-color: #8b5e83;
+        color: #ffffff;
+        padding: 1rem 0;
+      }
+      footer p, footer a {
+        margin: 0;
+        color: #ffffff;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        .jumbotron, section {
+          padding: 1rem;
+        }
+        .carousel-inner img {
+          max-height: 70vh; /* Reduce height for smaller devices */
+        }
+		}
+		
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="boudoir.html">Artful Intimacy</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="miracle.html">Miracle of Life</a>
-      </li>
-    </ul>
-     </div>
-</nav>
+      <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="boudoir.html">Artful Intimacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="miracle.html">Miracle of Life</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <section class="text-center my-5">
       <div class="container">
