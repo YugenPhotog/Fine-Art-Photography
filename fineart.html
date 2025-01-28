@@ -91,6 +91,30 @@
           max-height: 70vh; /* Reduce height for smaller devices */
         }
       }
+		 .button-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.button-container a {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-family: "Playfair Display", serif;
+  color: #ffffff;
+  text-decoration: none;
+  background: linear-gradient(145deg, #9b6c95, #7b5478);
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.button-container a:hover {
+  background: linear-gradient(145deg, #7b5478, #9b6c95);
+  transform: scale(1.05);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.15);
+}
+
     </style>
   </head>
 <body>
@@ -133,45 +157,72 @@
     </section>
 
     <main>
-      <!-- Carousel Section -->
-      <section class="my-5">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="images/FineArt/RosesBurn_HeartsBreak_SLA_5636.jpg" alt="Roses Burn Hearts Break">
-            </div>
-            <div class="carousel-item">
-              <img src="images/FineArt/nikki_yugenfineart-5646.jpg" alt="Nikki Yugen Fine Art">
-            </div>
-            <div class="carousel-item">
-              <img src="images/FineArt/nikki_fineart_SLA_5630.jpg" alt="Nikki Fine Art">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+  <!-- Carousel Section -->
+  <section class="my-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/FineArt/RosesBurn_HeartsBreak_SLA_5636.jpg" alt="Roses Burn Hearts Break" class="d-block w-100">
         </div>
-      </section>
+        <div class="carousel-item">
+          <img src="images/FineArt/nikki_yugenfineart-5646.jpg" alt="Nikki Yugen Fine Art" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="images/FineArt/nikki_fineart_SLA_5630.jpg" alt="Nikki Fine Art" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="images/FineArt/Veiled in Crimson/kimberly_veiledincrimson_yugenfineart-2928.jpg" alt="Kimberly, Veiled in Crimson" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="images/FineArt/kimberly_goldenhues_yugenfineart-2777.jpg" alt="Kimberly Golden Hues" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="images/FineArt/Circles, Shapes, and Silhouettes/SLA_4037-Edit.jpg" alt="Circles, Shapes, and Silhouettes" class="d-block w-100">
+        </div>
+		  <div class="carousel-item">
+          <img src="images/FineArt/kimberly_veiledradiance_yugenfineart-3332.jpg" alt="high key fine art nude with pink fabric" class="d-block w-100">
+        </div>
+		  <div class="carousel-item">
+          <img src="images/FineArt/kimberly_siekommen_yugenfineart-16.jpg" alt="sie kommen remake" class="d-block w-100">
+        </div>
+		  <div class="carousel-item">
+          <img src="images/FineArt/alienworld_yugenfineart.jpg" alt="alien world" class="d-block w-100">
+        </div>
+		  <div class="carousel-item">
+          <img src="images/FineArt/mermaid_yugenfineart.jpg" alt="mermaid by the sea" class="d-block w-100">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+</main>
+
 
       <div class="content">
-        <p>
-          At Yugen Fine Art, we believe in the profound power of visual storytelling. Every piece of art carries within it a silent narrative, capable of transcending the barriers of language and culture. Our commitment to excellence and artistry ensures that each creation is a testament to the beauty, grace, and strength that defines the human spirit.
-        </p>
-        <p>
-          Explore our carefully curated gallery of works, where every image invites you to pause, reflect, and connect with the essence of the moment. Whether you are a collector, an enthusiast, or simply someone seeking inspiration, Yugen Fine Art promises an experience that resonates deeply and lingers long after.
-        </p>
+        <p>Elevate your space with my exclusive fine art portraits, each a unique piece of artwork I’ve personally created. Available as premium canvas prints or on luxurious fine art paper, these pieces are ready to transform your home or office.  Explore our online gallery today and find the perfect image to call your own!" </p>
       </div>
-    </main>
+	 <div class="button-container">
+    <a href="fineart_gallery.html">Visit the Full Gallery</a>
+</div>
 
     <footer class="text-center">
       <div class="container">

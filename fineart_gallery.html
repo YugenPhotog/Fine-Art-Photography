@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery - Yugen Fine Art</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <style>
+      /* General Styling */
+      body {
+        font-family: "Georgia", serif;
+        background-color: #3b2f3a;
+        color: #f4f4f4;
+      }
+      .navbar {
+        background-color: #8b5e83;
+      }
+      .navbar-brand, .nav-link {
+        font-family: "Playfair Display", serif;
+        color: #ffffff !important;
+      }
+      h1, h2, h3, h4 {
+        color: #e6d5ea;
+        font-family: "Playfair Display", serif;
+      }
+      .gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 20px 0;
+      }
+      .gallery-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .gallery-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      .gallery-item-title {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+      .gallery-item:hover .gallery-item-title {
+        background: rgba(139, 94, 131, 0.8);
+      }
+      footer {
+        background-color: #8b5e83;
+        color: #ffffff;
+        padding: 1rem 0;
+      }
+      footer p, footer a {
+        color: #ffffff;
+        margin: 0;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        .gallery-section {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+        </ul>
+     </div>
+    </nav>
+
+    <section class="text-center my-5">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>Explore the full collection of Yugen Fine Art. Click on any image to view it in detail.</p>
+      </div>
+    </section>
+
+    <main class="container">
+      <div class="gallery">
+        <div class="gallery-section">
+          <div class="gallery-item">
+            <img src="images/FineArt/Veiled in Crimson/kimberly_veiledincrimson_yugenfineart-3002.jpg" alt="Kimberly, Veiled in Crimson">
+            <div class="gallery-item-title">Kimberly, Veiled in Crimson</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/FineArt/RosesBurn_HeartsBreak_SLA_5636.jpg" alt="Roses Burn Hearts Break">
+            <div class="gallery-item-title">Roses Burn Hearts Break</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/FineArt/kimberly_goldenhues_yugenfineart-2777.jpg" alt="Kimberly Golden Hues">
+            <div class="gallery-item-title">Kimberly Golden Hues</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/FineArt/kimberly_veiledradiance_yugenfineart-3332.jpg" alt="Kimberly Veiled Radiance">
+            <div class="gallery-item-title">Kimberly Veiled Radiance</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/FineArt/nikki_fineart_SLA_5630.jpg" alt="Nikki Fine Art">
+            <div class="gallery-item-title">Nikki Fine Art</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/FineArt/nikki_yugenfineart-5646.jpg" alt="Nikki Yugen Fine Art">
+            <div class="gallery-item-title">Nikki Yugen Fine Art</div>
+          </div>
+			<div class="gallery-item">
+            <img src="images/FineArt/Circles, Shapes, and Silhouettes/4-Kimberly, Circles, Shapes, and Silhouettes, (c) Steven Austin_-4.jpg" alt="Kimberly, Circles, Shapes, and Silhouettes">
+            <div class="gallery-item-title">Kimberly, Circles, Shapes, and Silhouettes</div>
+          </div>
+        </div>
+        <div class="gallery-section">
+          
+          <div class="gallery-item">
+            <img src="images/FineArt/alienworld_yugenfineart.jpg" alt="Alien World">
+            <div class="gallery-item-title">Alien World</div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="images/FineArt/mermaid_yugenfineart.jpg" alt="Mermaid by the Sea">
+            <div class="gallery-item-title">Mermaid by the Sea</div>
+          </div>
+			<div class="gallery-item">
+            <img src="images/FineArt/kimberly_siekommen_yugenfineart-16.jpg" alt="Kimberly Sie Kommen">
+            <div class="gallery-item-title">Kimberly Sie Kommen</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; Yugen Photography. All rights reserved.</p>
+        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>
