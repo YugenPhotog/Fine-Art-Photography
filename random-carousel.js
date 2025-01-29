@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 selection.images[folder] = image;
             }
             
-            // Add two random images from Caroline
+            // Add three random images from Caroline
             const carolineFolders = ["Caroline/elegance", "Caroline/luminous"];
-            for (let i = 0; i < 2; i++) {
+            for (let i = 0; i < 3; i++) {
                 let randomFolder;
                 let randomImage;
                 do {
