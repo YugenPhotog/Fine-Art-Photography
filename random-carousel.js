@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
             "caroline_miracleoflife-5632.jpg", "caroline_miracleoflife-5658.jpg", "caroline_miracleoflife-5682.jpg",
             "caroline_miracleoflife-5685.jpg"
         ],
-        "Caroline/glitter": [
-            "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5814.jpg", "caroline_miracleoflife-5823.jpg"
-        ],
         "Caroline/luminous": [
             "caroline_miracleoflife-11.jpg", "caroline_miracleoflife-.jpg", "caroline_miracleoflife-2.jpg",
             "caroline_miracleoflife-3.jpg", "caroline_miracleoflife-4.jpg", "caroline_miracleoflife-5.jpg",
             "caroline_miracleoflife-6.jpg", "caroline_miracleoflife-7.jpg", "caroline_miracleoflife-8.jpg",
             "caroline_miracleoflife-9.jpg", "caroline_miracleoflife-10.jpg"
+        ],
+        "Caroline/elegance": [
+            "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5814.jpg", "caroline_miracleoflife-5823.jpg"
         ]
     };
 
