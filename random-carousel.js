@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getRandomImageFromFolder(folder) {
         const images = imageFolders[folder];
-        return images[Math.floor(Math.random() * images.length)];
+        return images.length ? images[Math.floor(Math.random() * images.length)] : null;
     }
 
     function getDailySelection() {
@@ -52,14 +52,23 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!selection || selection.date !== today) {
             selection = { date: today, images: {} };
             for (const folder in imageFolders) {
-                selection.images[folder] = getRandomImageFromFolder(folder);
+                let image;
+                do {
+                    image = getRandomImageFromFolder(folder);
+                } while (!image);
+                selection.images[folder] = image;
             }
             
             // Add two random images from Caroline
             const carolineFolders = ["Caroline/elegance", "Caroline/luminous"];
             for (let i = 0; i < 2; i++) {
-                const randomFolder = carolineFolders[Math.floor(Math.random() * carolineFolders.length)];
-                selection.images[`Caroline/random_${i}`] = getRandomImageFromFolder(randomFolder);
+                let randomFolder;
+                let randomImage;
+                do {
+                    randomFolder = carolineFolders[Math.floor(Math.random() * carolineFolders.length)];
+                    randomImage = getRandomImageFromFolder(randomFolder);
+                } while (!randomImage);
+                selection.images[`Caroline/random_${i}`] = randomImage;
             }
             
             localStorage.setItem("dailyImageSelection", JSON.stringify(selection));
