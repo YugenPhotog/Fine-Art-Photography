@@ -24,16 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
             "caroline_miracleoflife-5688.jpg", "caroline_miracleoflife-5550.jpg", "caroline_miracleoflife-5579.jpg",
             "caroline_miracleoflife-5581.jpg", "caroline_miracleoflife-5583.jpg", "caroline_miracleoflife-5603.jpg",
             "caroline_miracleoflife-5632.jpg", "caroline_miracleoflife-5658.jpg", "caroline_miracleoflife-5682.jpg",
-            "caroline_miracleoflife-5685.jpg"
+            "caroline_miracleoflife-5685.jpg", "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5814.jpg", "caroline_miracleoflife-5823.jpg"
         ],
         "Caroline/luminous": [
             "caroline_miracleoflife-11.jpg", "caroline_miracleoflife-.jpg", "caroline_miracleoflife-2.jpg",
             "caroline_miracleoflife-3.jpg", "caroline_miracleoflife-4.jpg", "caroline_miracleoflife-5.jpg",
             "caroline_miracleoflife-6.jpg", "caroline_miracleoflife-7.jpg", "caroline_miracleoflife-8.jpg",
             "caroline_miracleoflife-9.jpg", "caroline_miracleoflife-10.jpg"
-        ],
-        "Caroline/elegance": [
-            "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5814.jpg", "caroline_miracleoflife-5823.jpg"
         ]
     };
 
@@ -57,6 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
             for (const folder in imageFolders) {
                 selection.images[folder] = getRandomImageFromFolder(folder);
             }
+            
+            // Add two random images from Caroline
+            const carolineFolders = ["Caroline/elegance", "Caroline/luminous"];
+            for (let i = 0; i < 2; i++) {
+                const randomFolder = carolineFolders[Math.floor(Math.random() * carolineFolders.length)];
+                selection.images[`Caroline/random_${i}`] = getRandomImageFromFolder(randomFolder);
+            }
+            
             localStorage.setItem("dailyImageSelection", JSON.stringify(selection));
         }
         return selection.images;
