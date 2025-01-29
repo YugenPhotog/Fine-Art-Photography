@@ -80,6 +80,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -96,6 +97,43 @@
       </li>
     </ul>
      </div>
+		<!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
+  <div class="btn-container"> <a href="contact.html" class="btn btn-3d">Let’s Create Together</a> </div>
+  <style>
+  .btn-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns button to the right */
+    padding-right: 20px; /* Adds spacing from the edge */
+  }
+
+  .btn-3d {
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #8b5e83;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px #6a4664;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-3d:hover {
+    background-color: #6a4664;
+    box-shadow: 0 2px #4e354c;
+    transform: translateY(2px);
+  }
+
+  .btn-3d:active {
+    background-color: #573a57;
+    box-shadow: 0 0 #573a57;
+    transform: translateY(4px);
+  }
+  </style>
+  <!-- #EndLibraryItem -->
+  
 </nav>
 
    <section>
@@ -163,9 +201,20 @@
       </div>
     </section>
     <footer class="text-center">
-      <div class="container">
-        <p>&copy; Yugen Photography. All rights reserved.</p>
-<a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+  <div class="container">
+    <p>&copy; Yugen Photography. All rights reserved.</p>
+    <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://x.com/YugenPhotog" target="_blank" class="text-white">
+  <i class="fab fa-twitter"></i>
+</a>
+    <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white">
+      <i class="fab fa-flickr"></i>
+    </a>
+  </div>
+</footer>
+
 
        </div>
     </footer>
