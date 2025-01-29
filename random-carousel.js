@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "caroline_miracleoflife-5688.jpg", "caroline_miracleoflife-5550.jpg", "caroline_miracleoflife-5579.jpg",
             "caroline_miracleoflife-5581.jpg", "caroline_miracleoflife-5583.jpg", "caroline_miracleoflife-5603.jpg",
             "caroline_miracleoflife-5632.jpg", "caroline_miracleoflife-5658.jpg", "caroline_miracleoflife-5682.jpg",
-            "caroline_miracleoflife-5685.jpg", "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5814.jpg", "caroline_miracleoflife-5823.jpg"
+            "caroline_miracleoflife-5685.jpg", "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5823.jpg"
         ],
         "Caroline/luminous": [
             "caroline_miracleoflife-11.jpg", "caroline_miracleoflife-.jpg", "caroline_miracleoflife-2.jpg",
@@ -73,11 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
             
             localStorage.setItem("dailyImageSelection", JSON.stringify(selection));
         }
+        console.log("Daily Selection:", selection);
         return selection.images;
     }
 
     function updateCarousel() {
         const selectedImages = getDailySelection();
+        console.log("Selected Images for Carousel:", selectedImages);
+        
         const carouselInner = document.querySelector("#carouselExampleIndicators .carousel-inner");
         const carouselIndicators = document.querySelector("#carouselExampleIndicators .carousel-indicators");
 
@@ -89,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (const folder in selectedImages) {
             const imageUrl = `images/Maternity/${folder}/${selectedImages[folder]}`;
+            console.log(`Adding image: ${imageUrl}`);
             
             // Create carousel item
             const carouselItem = document.createElement("div");
