@@ -1,121 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Artful Intimacy - Yugen Fine Art Photography</title>
-
+    <title>Yugen Fine Art Photography</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
-        /* General Styling */
-        body {
-            font-family: "Georgia", serif;
-            background-color: #3b2f3a; /* Dark grey with a hint of purple */
-            color: #f4f4f4;
-        }
-        .navbar {
-            background-color: #8b5e83;
-        }
-        .navbar-brand, .nav-link {
-            font-family: "Playfair Display", serif;
-            color: #ffffff !important;
-        }
-        h1, h2, h3, h4 {
-            color: #e6d5ea;
-            font-family: "Playfair Display", serif;
-        }
-        .carousel-item img {
-            display: block;
-            margin: 0 auto;
-            width: auto;
-            height: 90vh;
-            object-fit: contain;
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: #8b5e83;
-            border-radius: 50%;
-            padding: 10px;
-        }
-        footer {
-            background-color: #8b5e83;
-            color: #ffffff;
-            padding: 1rem 0;
-        }
-        footer p, footer a {
-            color: #ffffff;
-            margin: 0;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Let's Create Together Button */
-        .create-together-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .btn-create {
-            display: inline-block;
-            font-family: "Playfair Display", serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #3b2f3a;
-            background-color: #f4a261;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px #c87b45;
-            transition: all 0.2s ease-in-out;
-        }
-        .btn-create:hover {
-            background-color: #e76f51;
-            box-shadow: 0 2px #b55439;
-            transform: translateY(2px);
-        }
-        .btn-create:active {
-            background-color: #b55439;
-            box-shadow: 0 0 #b55439;
-            transform: translateY(4px);
-        }
+      /* Custom Styling */
+      body {
+        font-family: "Georgia", serif;
+        background-color: #3b2f3a;
+        color: #f4f4f4;
+      }
+      .navbar {
+        background-color: #8b5e83;
+      }
+      .navbar-brand, .nav-link {
+        font-family: "Playfair Display", serif;
+        color: #ffffff !important;
+      }
+      .jumbotron {
+        background: url('images/Shared/jumbotron.png') center/cover no-repeat;
+        color: #8b5e83;
+        padding: 3rem 2rem;
+      }
+      h2, h3, h4 {
+        color: #8b5e83;
+        font-family: "Playfair Display", serif;
+      }
+      footer {
+        background-color: #8b5e83;
+        color: #ffffff;
+        padding: 1rem 0;
+      }
+      footer p, footer a {
+        margin: 0;
+        color: #ffffff;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      /* Carousel Styling */
+      .carousel-item img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+      .carousel-inner {
+        height: 90vh;
+      }
+      /* Age Verification Popup */
+      #ageVerification {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      #ageVerification p {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      #ageVerification button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #8b5e83;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #ageVerification button:hover {
+        background-color: #6a4671;
+      }
     </style>
-</head>
-
+  </head>
 <body>
-    <!-- Age Verification -->
     <div id="ageVerification">
-        <p>
-            This site contains fine art photography, including depictions of nudity. 
-            You must be 18 years or older to enter. By proceeding, you confirm you are at least 18 years old.
-        </p>
-        <button id="confirmAge">I Am Over 18</button>
+      <p>This site contains fine art photography, including depictions of nudity. You must be 18 years or older to enter.</p>
+      <button id="confirmAge">I Am Over 18</button>
     </div>
 
-    <!-- Navigation -->
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="fineart.html">Yugen Fine Art</a></li>
-                <li class="nav-item"><a class="nav-link" href="boudoir.html">Artful Intimacy</a></li>
-                <li class="nav-item"><a class="nav-link" href="miracle.html">Miracle of Life</a></li>
-            </ul>
-    </div>
-  <!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
-        <div class="btn-container"> <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a> </div>
-        <style>
+    <nav class="navbar navbar-expand-lg">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="boudoir.html">Artful Intimacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="miracle.html">Miracle of Life</a>
+          </li>
+        </ul>
+      </div>
+		<!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
+    <div class="btn-container"> <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a> </div>
+    <style>
   .btn-container {
     display: flex;
     justify-content: flex-end; /* Aligns button to the right */
@@ -147,16 +149,18 @@
     box-shadow: 0 0 #b55439;
     transform: translateY(4px);
   }
-        </style>
-  <!-- #EndLibraryItem --> </nav>
+    </style>
+  <!-- #EndLibraryItem -->
 
-
-    <!-- Section Title -->
-    <section class="text-center my-5">
+  </nav>
+<section>
+  <div class="jumbotron text-center">
         <div class="container">
-            <h1>Artful Intimacy</h1>
-            <p>A celebration of grace, strength, and beauty through fine art photography.</p>
+          <h1>Artful Intimacy</h1>
+          <p>A Celebration of Grace, Strength, and Beauty through Fine Art Photography</p>
+          <a class="btn btn-primary btn-lg" href="about_boudoir.html" role="button">Learn More</a>
         </div>
+  </div>
     </section>
 
     <!-- Carousel Section -->
@@ -208,14 +212,14 @@
 <script src="js/bootstrap-4.4.1.js"></script>
 
 <!-- Disable Right-Click -->
-    <script>
+<script>
       document.addEventListener("contextmenu", function(e) {
         e.preventDefault();
       });
     </script>
 	
     
-    <!-- Age Verification Script -->
+<!-- Age Verification Script -->
     <script>
         document.getElementById("confirmAge").addEventListener("click", function() {
             localStorage.setItem("ageVerified", "true");
