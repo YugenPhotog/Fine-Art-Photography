@@ -1,44 +1,29 @@
 // JavaScript Document
 document.addEventListener("DOMContentLoaded", function () {
-    const imageFolders = {
-        "Abby/bw": [
-            "abby_miracleoflife-10.jpg", "abby_miracleoflife-1.jpg", "abby_miracleoflife--3.jpg",
-            "abby_miracleoflife--4.jpg", "abby_miracleoflife--5.jpg", "abby_miracleoflife-7.jpg",
-            "abby_miracleoflife-9.jpg"
-        ],
-        "Abby/fashion": [
-            "abby_miracleoflife-4428.jpg", "abby_miracleoflife--6.jpg",
-            "abby_miracleoflife--7.jpg", "abby_miracleoflife-4404.jpg"
-        ],
-        "Abby/flowers": [
-            "abby_miracleoflife-4507.jpg", "abby_miracleoflife-4501.jpg"
-        ],
-        "Abby/glow": [
-            "abby_miracleoflife-4626.jpg", "abby_miracleoflife-4586.jpg", "abby_miracleoflife-4601.jpg"
-        ],
-        "Abby/shear": [
-            "SLA_4607.jpg", "abby_miracleoflife-4341.jpg", "abby_miracleoflife-4345.jpg",
-            "abby_miracleoflife-4377.jpg"
-        ],
-        "Caroline/elegance": [
-            "caroline_miracleoflife-5688.jpg", "caroline_miracleoflife-5550.jpg", "caroline_miracleoflife-5579.jpg",
-            "caroline_miracleoflife-5581.jpg", "caroline_miracleoflife-5583.jpg", "caroline_miracleoflife-5603.jpg",
-            "caroline_miracleoflife-5632.jpg", "caroline_miracleoflife-5658.jpg", "caroline_miracleoflife-5682.jpg",
-            "caroline_miracleoflife-5685.jpg", "caroline_miracleoflife-5829.jpg", "caroline_miracleoflife-5823.jpg"
-        ],
-        "Caroline/luminous": [
-            "caroline_miracleoflife-11.jpg", "caroline_miracleoflife-.jpg", "caroline_miracleoflife-2.jpg",
-            "caroline_miracleoflife-3.jpg", "caroline_miracleoflife-4.jpg", "caroline_miracleoflife-5.jpg",
-            "caroline_miracleoflife-6.jpg", "caroline_miracleoflife-7.jpg", "caroline_miracleoflife-8.jpg",
-            "caroline_miracleoflife-9.jpg", "caroline_miracleoflife-10.jpg"
-        ]
-    };
-
-    function getRandomImageFromFolder(folder) {
-        const images = imageFolders[folder];
-        return images.length ? images[Math.floor(Math.random() * images.length)] : null;
+    const imageFolderPath = "images/maternity";
+    
+    const abbyImages = [
+        "abby_maternity_001.jpg", "abby_maternity_002.jpg", "abby_maternity_003.jpg", "abby_maternity_004.jpg",
+        "abby_maternity_005.jpg", "abby_maternity_006.jpg", "abby_maternity_007.jpg", "abby_maternity_008.jpg",
+        "abby_maternity_009.jpg", "abby_maternity_010.jpg", "abby_maternity_011.jpg", "abby_maternity_012.jpg",
+        "abby_maternity_013.jpg", "abby_maternity_014.jpg", "abby_maternity_015.jpg", "abby_maternity_016.jpg",
+        "abby_maternity_017.jpg", "abby_maternity_018.jpg", "abby_maternity_019.jpg"
+    ];
+    
+    const carolineImages = [
+        "caroline_maternity_001.jpg", "caroline_maternity_002.jpg", "caroline_maternity_003.jpg", "caroline_maternity_004.jpg",
+        "caroline_maternity_005.jpg", "caroline_maternity_006.jpg", "caroline_maternity_007.jpg", "caroline_maternity_008.jpg",
+        "caroline_maternity_009.jpg", "caroline_maternity_010.jpg", "caroline_maternity_011.jpg", "caroline_maternity_012.jpg",
+        "caroline_maternity_013.jpg", "caroline_maternity_014.jpg", "caroline_maternity_015.jpg", "caroline_maternity_016.jpg",
+        "caroline_maternity_017.jpg", "caroline_maternity_018.jpg", "caroline_maternity_019.jpg", "caroline_maternity_020.jpg",
+        "caroline_maternity_021.jpg"
+    ];
+    
+    function getRandomImages(imageArray, count) {
+        const shuffled = [...imageArray].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
     }
-
+    
     function getDailySelection() {
         const today = new Date().toDateString();
         let selection;
@@ -50,33 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!selection || selection.date !== today) {
-            selection = { date: today, images: {} };
-            for (const folder in imageFolders) {
-                let image;
-                do {
-                    image = getRandomImageFromFolder(folder);
-                } while (!image);
-                selection.images[folder] = image;
-            }
+            selection = { date: today, images: [] };
             
-            // Add three random images from Caroline
-            const carolineFolders = ["Caroline/elegance", "Caroline/luminous"];
-            for (let i = 0; i < 3; i++) {
-                let randomFolder;
-                let randomImage;
-                do {
-                    randomFolder = carolineFolders[Math.floor(Math.random() * carolineFolders.length)];
-                    randomImage = getRandomImageFromFolder(randomFolder);
-                } while (!randomImage);
-                selection.images[`Caroline/random_${i}`] = randomImage;
-            }
+            const selectedAbbyImages = getRandomImages(abbyImages, 5);
+            const selectedCarolineImages = getRandomImages(carolineImages, 5);
+            
+            selection.images = [...selectedAbbyImages, ...selectedCarolineImages];
             
             localStorage.setItem("dailyImageSelection", JSON.stringify(selection));
         }
         console.log("Daily Selection:", selection);
         return selection.images;
     }
-
+    
     function updateCarousel() {
         const selectedImages = getDailySelection();
         console.log("Selected Images for Carousel:", selectedImages);
@@ -85,26 +56,24 @@ document.addEventListener("DOMContentLoaded", function () {
         const carouselIndicators = document.querySelector("#carouselExampleIndicators .carousel-indicators");
 
         carouselInner.innerHTML = "";
-        carouselIndicators.innerHTML = ""; // Clear previous indicators
-
+        carouselIndicators.innerHTML = "";
+        
         let isFirst = true;
         let index = 0;
 
-        for (const folder in selectedImages) {
-            const imageUrl = `images/Maternity/${folder}/${selectedImages[folder]}`;
+        selectedImages.forEach(image => {
+            const imageUrl = `${imageFolderPath}/${image}`;
             console.log(`Adding image: ${imageUrl}`);
             
-            // Create carousel item
             const carouselItem = document.createElement("div");
             carouselItem.classList.add("carousel-item");
             if (isFirst) {
                 carouselItem.classList.add("active");
                 isFirst = false;
             }
-            carouselItem.innerHTML = `<img src="${imageUrl}" class="d-block w-100" alt="${selectedImages[folder]}">`;
+            carouselItem.innerHTML = `<img src="${imageUrl}" class="d-block w-100" alt="${image}">`;
             carouselInner.appendChild(carouselItem);
-
-            // Create corresponding indicator
+            
             const indicator = document.createElement("li");
             indicator.setAttribute("data-target", "#carouselExampleIndicators");
             indicator.setAttribute("data-slide-to", index);
@@ -112,9 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 indicator.classList.add("active");
             }
             carouselIndicators.appendChild(indicator);
-
+            
             index++;
-        }
+        });
     }
 
     updateCarousel();
