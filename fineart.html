@@ -238,15 +238,24 @@
     <script src="js/bootstrap-4.4.1.js"></script>
 
     <!-- Age Verification Script -->
-    <script>
-        document.getElementById("confirmAge").addEventListener("click", function() {
-            localStorage.setItem("ageVerified", "true");
-            document.getElementById("ageVerification").style.display = "none";
-        });
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let agePopup = document.getElementById("ageVerification");
+        let confirmButton = document.getElementById("confirmAge");
 
-        if (localStorage.getItem("ageVerified") === "true") {
-            document.getElementById("ageVerification").style.display = "none";
+        // Check local storage
+        if (localStorage.getItem("ageVerified") !== "true") {
+            agePopup.style.display = "flex"; // Ensure popup is visible on load
+        } else {
+            agePopup.style.display = "none"; // Hide if already verified
         }
-    </script>
+
+        // On button click, hide popup and save preference
+        confirmButton.addEventListener("click", function () {
+            localStorage.setItem("ageVerified", "true");
+            agePopup.style.display = "none";
+        });
+    });
+</script>
 </body>
 </html>
