@@ -221,14 +221,29 @@
     
 <!-- Age Verification Script -->
     <script>
-        document.getElementById("confirmAge").addEventListener("click", function() {
-            localStorage.setItem("ageVerified", "true");
-            document.getElementById("ageVerification").style.display = "none";
-        });
+    document.addEventListener("DOMContentLoaded", function () {
+        let agePopup = document.getElementById("ageVerification");
+        let confirmButton = document.getElementById("confirmAge");
 
-        if (localStorage.getItem("ageVerified") === "true") {
-            document.getElementById("ageVerification").style.display = "none";
+        if (!agePopup || !confirmButton) {
+            console.error("Age verification elements not found.");
+            return;
         }
-    </script>
+
+        // Delay the check to ensure proper display
+        setTimeout(() => {
+            if (localStorage.getItem("ageVerified") !== "true") {
+                agePopup.style.display = "flex"; // Show popup only if not verified
+            }
+        }, 500); // Small delay to prevent flickering
+
+        // When user confirms age
+        confirmButton.addEventListener("click", function () {
+            localStorage.setItem("ageVerified", "true");
+            agePopup.style.display = "none";
+        });
+    });
+</script>
+
 </body>
 </html>
