@@ -238,24 +238,31 @@
     <script src="js/bootstrap-4.4.1.js"></script>
 
     <!-- Age Verification Script -->
-<script>
+	<script>
     document.addEventListener("DOMContentLoaded", function () {
         let agePopup = document.getElementById("ageVerification");
         let confirmButton = document.getElementById("confirmAge");
 
-        // Check local storage
-        if (localStorage.getItem("ageVerified") !== "true") {
-            agePopup.style.display = "flex"; // Ensure popup is visible on load
-        } else {
-            agePopup.style.display = "none"; // Hide if already verified
+        if (!agePopup || !confirmButton) {
+            console.error("Age verification elements not found.");
+            return;
         }
 
-        // On button click, hide popup and save preference
+        // Delay the check to ensure proper display
+        setTimeout(() => {
+            if (localStorage.getItem("ageVerified") !== "true") {
+                agePopup.style.display = "flex"; // Show popup only if not verified
+            }
+        }, 500); // Small delay to prevent flickering
+
+        // When user confirms age
         confirmButton.addEventListener("click", function () {
             localStorage.setItem("ageVerified", "true");
             agePopup.style.display = "none";
         });
     });
 </script>
+
+
 </body>
 </html>
