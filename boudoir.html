@@ -88,14 +88,15 @@
       }
     </style>
   </head>
-<body>
+  <body>
     <div id="ageVerification">
       <p>This site contains fine art photography, including depictions of nudity. You must be 18 years or older to enter.</p>
       <button id="confirmAge">I Am Over 18</button>
     </div>
 
     <nav class="navbar navbar-expand-lg">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
@@ -115,135 +116,123 @@
           </li>
         </ul>
       </div>
-		<!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
-    <div class="btn-container"> <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a> </div>
-    <style>
-  .btn-container {
-    display: flex;
-    justify-content: flex-end; /* Aligns button to the right */
-    padding-right: 20px; /* Adds spacing from the edge */
-  }
+      <!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
+      <div class="btn-container">
+        <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a>
+      </div>
+      <style>
+        .btn-container {
+          display: flex;
+          justify-content: flex-end; /* Aligns button to the right */
+          padding-right: 20px; /* Adds spacing from the edge */
+        }
+        .btn-3d {
+          display: inline-block;
+          font-family: "Playfair Display", serif;
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #3b2f3a; /* Dark text for contrast */
+          background-color: #f4a261; /* Warm golden-orange for contrast */
+          padding: 14px 28px;
+          border-radius: 8px;
+          text-decoration: none;
+          box-shadow: 0 4px #c87b45;
+          transition: all 0.2s ease-in-out;
+        }
+        .btn-3d:hover {
+          background-color: #e76f51;
+          box-shadow: 0 2px #b55439;
+          transform: translateY(2px);
+        }
+        .btn-3d:active {
+          background-color: #b55439;
+          box-shadow: 0 0 #b55439;
+          transform: translateY(4px);
+        }
+      </style>
+      <!-- #EndLibraryItem -->
+    </nav>
 
-  .btn-3d {
-    display: inline-block;
-    font-family: "Playfair Display", serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #3b2f3a; /* Dark text for contrast */
-    background-color: #f4a261; /* Warm golden-orange for contrast */
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 4px #c87b45;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .btn-3d:hover {
-    background-color: #e76f51;
-    box-shadow: 0 2px #b55439;
-    transform: translateY(2px);
-  }
-
-  .btn-3d:active {
-    background-color: #b55439;
-    box-shadow: 0 0 #b55439;
-    transform: translateY(4px);
-  }
-    </style>
-  <!-- #EndLibraryItem -->
-
-  </nav>
-<section>
-  <div class="jumbotron text-center">
+    <section>
+      <div class="jumbotron text-center">
         <div class="container">
           <h1>Artful Intimacy</h1>
           <p>A Celebration of Grace, Strength, and Beauty through Fine Art Photography</p>
           <a class="btn btn-primary btn-lg" href="about_boudoir.html" role="button">Learn More</a>
         </div>
-  </div>
+      </div>
     </section>
 
     <!-- Carousel Section -->
     <section>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/Boudoir/nikki_sultry3.jpg" alt="Nikki Sultry 3" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/Boudoir/Sera_lingerie.jpg" alt="Sera Lingerie" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/Boudoir/Sera_lingerie1.jpg" alt="Sera Lingerie 1" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/Boudoir/whitney_candlelit_boudoir_1.jpg" alt="Whitney Candlelit Boudoir" class="d-block w-100">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+      <div id="carouselBoudoir" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner"></div>
+        <a class="carousel-control-prev" href="#carouselBoudoir" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselBoudoir" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </section>
-	
-	<footer class="text-center">
-  <div class="container">
-    <p>&copy; Yugen Photography. All rights reserved.</p>
-    <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://x.com/YugenPhotog" target="_blank" class="text-white">
-  <i class="fab fa-twitter"></i>
-</a>
-    <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white">
-      <i class="fab fa-flickr"></i>
-    </a>
-  </div>
-</footer>
+  
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; Yugen Photography. All rights reserved.</p>
+        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/YugenPhotog" target="_blank" class="text-white">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </div>
+    </footer>
 
-	<!-- jQuery and Bootstrap JS -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap-4.4.1.js"></script>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
 
-<!-- Disable Right-Click -->
-<script>
+    <!-- Disable Right-Click -->
+    <script>
       document.addEventListener("contextmenu", function(e) {
         e.preventDefault();
       });
     </script>
-	
-    
-<!-- Age Verification Script -->
+
+    <!-- Age Verification Script -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function () {
         let agePopup = document.getElementById("ageVerification");
         let confirmButton = document.getElementById("confirmAge");
 
         if (!agePopup || !confirmButton) {
-            console.error("Age verification elements not found.");
-            return;
+          console.error("Age verification elements not found.");
+          return;
         }
 
         // Delay the check to ensure proper display
         setTimeout(() => {
-            if (localStorage.getItem("ageVerified") !== "true") {
-                agePopup.style.display = "flex"; // Show popup only if not verified
-            }
+          if (localStorage.getItem("ageVerified") !== "true") {
+            agePopup.style.display = "flex"; // Show popup only if not verified
+          }
         }, 500); // Small delay to prevent flickering
 
         // When user confirms age
         confirmButton.addEventListener("click", function () {
-            localStorage.setItem("ageVerified", "true");
-            agePopup.style.display = "none";
+          localStorage.setItem("ageVerified", "true");
+          agePopup.style.display = "none";
         });
-    });
-</script>
-
-</body>
+      });
+    </script>
+    
+    <!-- Boudoir Carousel Script -->
+    <script src="js/boudoir-carousel.js"></script>
+  </body>
 </html>
