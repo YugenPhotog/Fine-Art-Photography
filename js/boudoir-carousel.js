@@ -38,6 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/Boudoir/boudoir_3.jpg"
     ];
 
+    // Function to randomly select 'count' number of images from the array
+    function getRandomImages(imageArray, count) {
+        const shuffled = imageArray.slice().sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+
+    // Select 12 images at random
+    const selectedImages = getRandomImages(boudoirImages, 12);
+
     // Select the carousel elements by ID
     const carouselInner = document.querySelector("#carouselBoudoir .carousel-inner");
     const carouselIndicators = document.querySelector("#carouselBoudoir .carousel-indicators");
@@ -51,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     carouselInner.innerHTML = "";
     carouselIndicators.innerHTML = "";
 
-    // Loop through the images array and add each image as a carousel item
-    boudoirImages.forEach((image, index) => {
+    // Loop through the selected images array and add each image as a carousel item
+    selectedImages.forEach((image, index) => {
         // Create a carousel item element
         const carouselItem = document.createElement("div");
         carouselItem.classList.add("carousel-item");
@@ -72,5 +81,5 @@ document.addEventListener("DOMContentLoaded", function () {
         carouselIndicators.appendChild(indicator);
     });
 
-    console.log("Boudoir carousel successfully updated!");
+    console.log("Boudoir carousel successfully updated with 12 images!");
 });
