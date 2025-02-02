@@ -10,116 +10,121 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
 		/* Custom Styling */
-body {
-  font-family: "Georgia", serif;
-  background-color: #f9f8f7;
-  color: #5a5a5a;
-}
-
-.navbar {
-  background-color: #8b5e83;
-}
-
-.navbar-brand, .nav-link {
-  font-family: "Playfair Display", serif;
-  color: #ffffff !important;
-}
-
-.jumbotron {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 2rem;
-  background: url('images/Shared/jumbotron_logo.jpg') center/cover no-repeat;
-  color: #8b5e83;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo-container img {
-  max-width: 200px; /* Adjust based on the size of your logo */
-}
-
-.text-container {
-  max-width: 600px; /* Adjust for text width */
-  margin-left: 20px;
-}
-
-.text-container h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1.3;
-}
-
-.text-container p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-
-.btn-primary {
-  background-color: #8b5e83;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #6a4664;
-}
-
-h2, h3, h4 {
-  color: #8b5e83;
-  font-family: "Playfair Display", serif;
-}
-
-.img-fluid {
-  transition: transform 0.3s ease-in-out;
-}
-
-.img-fluid:hover {
-  transform: scale(1.05);
-}
-
-footer {
-  background-color: #8b5e83;
-  color: #ffffff;
-  padding: 1rem 0;
-}
-
-footer p, footer a {
-  margin: 0;
-  color: #ffffff;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .jumbotron, section {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .logo-container img {
-    margin-bottom: 1rem;
-  }
-
-  .text-container {
-    margin: 0;
-  }
-}
-
-      
+		body {
+		  font-family: "Georgia", serif;
+		  background-color: #f9f8f7;
+		  color: #5a5a5a;
+		}
+		
+		.navbar {
+		  background-color: #8b5e83;
+		}
+		
+		.navbar-brand, .nav-link {
+		  font-family: "Playfair Display", serif;
+		  color: #ffffff !important;
+		}
+		
+		.jumbotron {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  padding: 3rem 2rem;
+		  background: url('images/Shared/jumbotron_logo.jpg') center/cover no-repeat;
+		  color: #8b5e83;
+		}
+		
+		.container {
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		}
+		
+		.logo-container img {
+		  max-width: 200px; /* Adjust based on the size of your logo */
+		}
+		
+		.text-container {
+		  max-width: 600px; /* Adjust for text width */
+		  margin-left: 20px;
+		}
+		
+		.text-container h1 {
+		  font-family: "Playfair Display", serif;
+		  font-size: 2.5rem;
+		  font-weight: bold;
+		  line-height: 1.3;
+		}
+		
+		.text-container p {
+		  font-size: 1.2rem;
+		  line-height: 1.5;
+		  margin-bottom: 1.5rem;
+		}
+		
+		.btn-primary {
+		  background-color: #8b5e83;
+		  border: none;
+		}
+		
+		.btn-primary:hover {
+		  background-color: #6a4664;
+		}
+		
+		h2, h3, h4 {
+		  color: #8b5e83;
+		  font-family: "Playfair Display", serif;
+		}
+		
+		.img-fluid {
+		  transition: transform 0.3s ease-in-out;
+		}
+		
+		.img-fluid:hover {
+		  transform: scale(1.05);
+		}
+		
+		footer {
+		  background-color: #8b5e83;
+		  color: #ffffff;
+		  padding: 1rem 0;
+		}
+		
+		footer p, footer a {
+		  margin: 0;
+		  color: #ffffff;
+		}
+		
+		footer a:hover {
+		  text-decoration: underline;
+		}
+		
+		@media (max-width: 768px) {
+		  .jumbotron, section {
+		    flex-direction: column;
+		    padding: 1rem;
+		  }
+		
+		  .container {
+		    flex-direction: column;
+		    text-align: center;
+		  }
+		
+		  .logo-container img {
+		    margin-bottom: 1rem;
+		  }
+		
+		  .text-container {
+		    margin: 0;
+		  }
+		}
+		
+		/* Custom class to override global container for centering content in this section */
+		.center-container {
+		  display: block;
+		  margin: 0 auto;
+		  width: 100%;
+		}
     </style>
   </head>
   <body>
@@ -205,7 +210,8 @@ footer a:hover {
 </section>
 
 	  <section>
-      <div class="container">
+      <!-- Added the custom 'center-container' class alongside 'container' to override flex styles -->
+      <div class="container center-container">
         <div class="text-center mb-4">
           <h2>Celebrating Beauty and Grace</h2>
           <p>The Art of Portraiture: Each portrait tells a story of confidence, beauty, and timeless artistry.</p>
