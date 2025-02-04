@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yugen Fine Art Photography</title>
-    <!-- Bootstrap -->
+    <!-- SEO and Metadata -->
+    <meta name="description" content="Artful Intimacy: A Celebration of Grace, Strength, and Beauty through Fine Art Photography.">
+    <meta name="author" content="Yugen Fine Art Photography">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Yugen Fine Art Photography | Artful Intimacy</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <style>
       /* Custom Styling */
       body {
         font-family: "Georgia", serif;
         background-color: #3b2f3a;
         color: #f4f4f4;
+        margin: 0;
+        padding: 0;
       }
       .navbar {
         background-color: #8b5e83;
@@ -21,11 +30,6 @@
       .navbar-brand, .nav-link {
         font-family: "Playfair Display", serif;
         color: #ffffff !important;
-      }
-      .jumbotron {
-        background: url('images/Shared/jumbotron.png') center/cover no-repeat;
-        color: #8b5e83;
-        padding: 3rem 2rem;
       }
       h2, h3, h4 {
         color: #8b5e83;
@@ -42,6 +46,28 @@
       }
       footer a:hover {
         text-decoration: underline;
+      }
+      /* Jumbotron Styling */
+      .jumbotron {
+        background: url('images/Shared/jumbotron_logo.jpg') center/cover no-repeat;
+        padding: 3rem 2rem;
+        color: #8b5e83;
+        margin-bottom: 0;
+      }
+      .jumbotron .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-container {
+        flex: 1;
+      }
+      .logo-container img {
+        max-width: 150px;
+        height: auto;
+      }
+      .text-container {
+        flex: 2;
       }
       /* Carousel Styling */
       .carousel-item img {
@@ -89,12 +115,15 @@
     </style>
   </head>
   <body>
+    <!-- Age Verification Popup -->
     <div id="ageVerification">
       <p>This site contains fine art photography, including depictions of nudity. You must be 18 years or older to enter.</p>
       <button id="confirmAge">I Am Over 18</button>
     </div>
 
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">Yugen Fine Art Photography</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -116,6 +145,7 @@
           </li>
         </ul>
       </div>
+      
       <!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
       <div class="btn-container">
         <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a>
@@ -153,21 +183,30 @@
       <!-- #EndLibraryItem -->
     </nav>
 
+    <!-- New Jumbotron Section -->
     <section>
-      <div class="jumbotron text-center">
-        <div class="container">
-          <h1>Artful Intimacy</h1>
-          <p>A Celebration of Grace, Strength, and Beauty through Fine Art Photography</p>
-          <a class="btn btn-primary btn-lg" href="about_boudoir.html" role="button">Learn More</a>
+      <div class="jumbotron d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo on the left -->
+      <div class="logo-container"></div>
+      <!-- Text content centered -->
+          <div class="text-container text-center">
+            <h1 class="display-4">Artful Intimacy</h1>
+            <p>At Artful Intimacy, we embrace the essence of <em>Yugen</em> (幽玄) — the profound beauty that lies beyond words. Through elegant, evocative boudoir photography, we capture the depth of your allure, the mystery of your presence, and the artistry of your confidence. Let us create an experience that reveals the intimate, the unseen, the unforgettable.</p>
+            
+            <a class="btn btn-primary btn-lg mt-3" href="about_boudoir.html" role="button">Discover More</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Carousel Section -->
-    <section>
+    <section aria-label="Boudoir Photography Carousel">
       <div id="carouselBoudoir" class="carousel slide" data-ride="carousel" data-interval="3000">
         <ol class="carousel-indicators"></ol>
-        <div class="carousel-inner"></div>
+        <div class="carousel-inner">
+          <!-- Carousel items will be injected here by boudoir-carousel.js -->
+        </div>
         <a class="carousel-control-prev" href="#carouselBoudoir" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -178,18 +217,19 @@
         </a>
       </div>
     </section>
-  
+    
+    <!-- Footer -->
     <footer class="text-center">
       <div class="container">
         <p>&copy; Yugen Photography. All rights reserved.</p>
-        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white">
-          <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
-        <a href="https://x.com/YugenPhotog" target="_blank" class="text-white">
-          <i class="fab fa-twitter"></i>
+        <a href="https://x.com/YugenPhotog" target="_blank" class="text-white" aria-label="Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
-        <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white">
-          <i class="fab fa-flickr"></i>
+        <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white" aria-label="Flickr">
+          <i class="fab fa-flickr" aria-hidden="true"></i>
         </a>
       </div>
     </footer>
@@ -209,8 +249,8 @@
     <!-- Age Verification Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        let agePopup = document.getElementById("ageVerification");
-        let confirmButton = document.getElementById("confirmAge");
+        const agePopup = document.getElementById("ageVerification");
+        const confirmButton = document.getElementById("confirmAge");
 
         if (!agePopup || !confirmButton) {
           console.error("Age verification elements not found.");
@@ -220,9 +260,11 @@
         // Delay the check to ensure proper display
         setTimeout(() => {
           if (localStorage.getItem("ageVerified") !== "true") {
-            agePopup.style.display = "flex"; // Show popup only if not verified
+            agePopup.style.display = "flex";
+          } else {
+            agePopup.style.display = "none";
           }
-        }, 500); // Small delay to prevent flickering
+        }, 500);
 
         // When user confirms age
         confirmButton.addEventListener("click", function () {
