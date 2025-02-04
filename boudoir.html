@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Artful Intimacy - Yugen Fine Art Photography</title>
+    <title>Yugen Fine Art Photography</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts for Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <style>
       /* Custom Styling */
       body {
@@ -23,7 +25,7 @@
         color: #ffffff !important;
       }
       .jumbotron {
-        background: url('images/Shared/jumbotron_logo.jpg') center/cover no-repeat;
+        background: url('images/Shared/jumbotron.png') center/cover no-repeat;
         color: #8b5e83;
         padding: 3rem 2rem;
       }
@@ -54,35 +56,131 @@
       .carousel-inner {
         height: 90vh;
       }
+      /* Age Verification Popup */
+      #ageVerification {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      #ageVerification p {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      #ageVerification button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #8b5e83;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #ageVerification button:hover {
+        background-color: #6a4671;
+      }
     </style>
   </head>
   <body>
+    <div id="ageVerification">
+      <p>This site contains fine art photography, including depictions of nudity. You must be 18 years or older to enter.</p>
+      <button id="confirmAge">I Am Over 18</button>
+    </div>
+
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="index.html">Artful Intimacy</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="fineart.html">Yugen Fine Art</a></li>
-          <li class="nav-item"><a class="nav-link" href="boudoir.html">Artful Intimacy</a></li>
-          <li class="nav-item"><a class="nav-link" href="miracle.html">Miracle of Life</a></li>
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fineart.html">Yugen Fine Art</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="boudoir.html">Artful Intimacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="miracle.html">Miracle of Life</a>
+          </li>
         </ul>
       </div>
+      <!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
+      <div class="btn-container">
+        <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a>
+      </div>
+      <style>
+        .btn-container {
+          display: flex;
+          justify-content: flex-end; /* Aligns button to the right */
+          padding-right: 20px; /* Adds spacing from the edge */
+        }
+        .btn-3d {
+          display: inline-block;
+          font-family: "Playfair Display", serif;
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #3b2f3a; /* Dark text for contrast */
+          background-color: #f4a261; /* Warm golden-orange for contrast */
+          padding: 14px 28px;
+          border-radius: 8px;
+          text-decoration: none;
+          box-shadow: 0 4px #c87b45;
+          transition: all 0.2s ease-in-out;
+        }
+        .btn-3d:hover {
+          background-color: #e76f51;
+          box-shadow: 0 2px #b55439;
+          transform: translateY(2px);
+        }
+        .btn-3d:active {
+          background-color: #b55439;
+          box-shadow: 0 0 #b55439;
+          transform: translateY(4px);
+        }
+      </style>
+      <!-- #EndLibraryItem -->
     </nav>
+
+    <section>
+      <div class="jumbotron text-center">
+        <div class="container">
+          <h1>Artful Intimacy</h1>
+          <p>Experience the artistry of boudoir—where confidence, self-expression, and fine art photography come together beyond the ordinary.</p>
+          <a class="btn btn-primary btn-lg" href="about_boudoir.html" role="button">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Corrected Carousel Section -->
     <section>
       <div class="container">
         <div class="text-center mb-4">
-          <h2>Intimate Elegance</h2>
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <ol class="carousel-indicators"></ol>
-            <div class="carousel-inner"></div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <h2>Unveiling Beauty: A Gallery of Artful Intimacy</h2>
+
+          <div id="carouselBoudoir" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators"></ol> <!-- JS will generate indicators -->
+            <div class="carousel-inner"></div> <!-- JS will populate images -->
+
+            <!-- Navigation Arrows -->
+            <a class="carousel-control-prev" href="#carouselBoudoir" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselBoudoir" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
@@ -90,25 +188,50 @@
         </div>
       </div>
     </section>
+
     <footer class="text-center">
       <div class="container">
         <p>&copy; Yugen Photography. All rights reserved.</p>
-        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/YugenPhotog" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white"><i class="fab fa-flickr"></i></a>
+        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/YugenPhotog" target="_blank" class="text-white">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white">
+          <i class="fab fa-flickr"></i>
+        </a>
       </div>
     </footer>
+
     <!-- jQuery and Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
+
     <!-- Disable Right-Click -->
     <script>
       document.addEventListener("contextmenu", function(e) {
         e.preventDefault();
       });
     </script>
+
+    <!-- Age Verification Script -->
+    <script>
+      document.getElementById("confirmAge").addEventListener("click", function() {
+        localStorage.setItem("ageVerified", "true");
+        document.getElementById("ageVerification").style.display = "none";
+      });
+
+      window.onload = function() {
+        if (localStorage.getItem("ageVerified") === "true") {
+          document.getElementById("ageVerification").style.display = "none";
+        }
+      };
+    </script>
+    
     <!-- JavaScript to Populate Carousel -->
     <script src="js/boudoir-carousel.js"></script>
+
   </body>
 </html>
