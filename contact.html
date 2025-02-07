@@ -89,21 +89,23 @@
           <p>Email: <a href="mailto:stavastn@icloud.com">stavastn@icloud.com</a>  Instagram: <a href="https://instagram.com/yugenphotog" target="_blank">@yugenphotog</a></p>
         </div>
         <!-- Netlify Contact Form -->
-        <div class="form-container">
-          <form name="contact" method="POST" data-netlify="true">
-            <div class="form-group">
-              <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
+<div class="form-container">
+  <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="contact"> 
+    <div class="form-group">
+      <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+</div>
+
+		 
     </section>
 
      <footer class="text-center">
