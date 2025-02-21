@@ -4,63 +4,57 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<!-- Updated sitemap with correct canonical URLs -->
 
 <url>
-        <loc>https://www.yugenphotog.com/</loc>
-        <lastmod>2024-02-21</lastmod>
-        <priority>1.0</priority>
-    </url>
-<url>
-  <loc>https://yugenphotog.com/</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>1.00</priority>
+    <loc>https://www.yugenphotog.com/</loc>
+    <lastmod>2025-02-21</lastmod>
+    <priority>1.0</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/fineart</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.80</priority>
+    <loc>https://www.yugenphotog.com/fineart</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/boudoir</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.80</priority>
+    <loc>https://www.yugenphotog.com/boudoir</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/miracle</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.80</priority>
+    <loc>https://www.yugenphotog.com/miracle</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/library/contact</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.80</priority>
+    <loc>https://www.yugenphotog.com/library/contact</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/about_yugen</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.80</priority>
+    <loc>https://www.yugenphotog.com/about_yugen</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/about_boudoir</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.64</priority>
+    <loc>https://www.yugenphotog.com/about_boudoir</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/about_miracle</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.64</priority>
+    <loc>https://www.yugenphotog.com/about_miracle</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/about</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.64</priority>
+    <loc>https://www.yugenphotog.com/about</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://yugenphotog.com/contact</loc>
-  <lastmod>2025-02-13T19:59:33+00:00</lastmod>
-  <priority>0.64</priority>
+    <loc>https://www.yugenphotog.com/contact</loc>
+    <lastmod>2025-02-13</lastmod>
+    <priority>0.64</priority>
 </url>
-
 
 </urlset>
