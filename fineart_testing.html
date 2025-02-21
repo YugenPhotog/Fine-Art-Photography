@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yugen Fine Art</title>
-	<link rel="canonical" href="https://www.yugenphotog.com/">
-
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -134,7 +132,16 @@
 </head>
 
 <body>
-      <!-- Navigation -->
+    <!-- Age Verification Popup -->
+<div id="ageVerification">
+        <p>
+            This site contains fine art photography, including depictions of nudity. 
+            You must be 18 years or older to enter. By proceeding, you confirm you are at least 18 years old.
+        </p>
+  <button id="confirmAge">I Am Over 18</button>
+    </div>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -206,7 +213,6 @@
     });
 </script>
 
-
     <!-- Call to Action Button -->
     <div class="button-container">
         <a href="https://YugenPhotog.pixieset.com/artgallery/" class="btn-gallery">Own a Piece of the Art</a>
@@ -231,31 +237,15 @@
     <script src="js/bootstrap-4.4.1.js"></script>
 
     <!-- Age Verification Script -->
-	<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let agePopup = document.getElementById("ageVerification");
-        let confirmButton = document.getElementById("confirmAge");
-
-        if (!agePopup || !confirmButton) {
-            console.error("Age verification elements not found.");
-            return;
-        }
-
-        // Delay the check to ensure proper display
-        setTimeout(() => {
-            if (localStorage.getItem("ageVerified") !== "true") {
-                agePopup.style.display = "flex"; // Show popup only if not verified
-            }
-        }, 500); // Small delay to prevent flickering
-
-        // When user confirms age
-        confirmButton.addEventListener("click", function () {
+    <script>
+        document.getElementById("confirmAge").addEventListener("click", function() {
             localStorage.setItem("ageVerified", "true");
-            agePopup.style.display = "none";
+            document.getElementById("ageVerification").style.display = "none";
         });
-    });
-</script>
 
-
+        if (localStorage.getItem("ageVerified") === "true") {
+            document.getElementById("ageVerification").style.display = "none";
+        }
+    </script>
 </body>
 </html>
