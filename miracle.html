@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yugen Fine Art Photography</title>
-	  <link rel="canonical" href="https://www.yugenphotog.com/">
+    <title>Yugen Fine Art Photography - Maternity</title>
+    <link rel="canonical" href="https://www.yugenphotog.com/">
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -88,16 +88,44 @@
       #ageVerification button:hover {
         background-color: #6a4671;
       }
+      /* Button Library Styling */
+      .btn-container {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+      }
+      .btn-3d {
+        display: inline-block;
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #3b2f3a;
+        background-color: #f4a261;
+        padding: 14px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px #c87b45;
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-3d:hover {
+        background-color: #e76f51;
+        box-shadow: 0 2px #b55439;
+        transform: translateY(2px);
+      }
+      .btn-3d:active {
+        background-color: #b55439;
+        box-shadow: 0 0 #b55439;
+        transform: translateY(4px);
+      }
     </style>
   </head>
   <body>
-    
-
     <nav class="navbar navbar-expand-lg">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -112,72 +140,41 @@
           <li class="nav-item">
             <a class="nav-link" href="miracle.html">Miracle of Life</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="maternity.html">Maternity</a>
+          </li>
         </ul>
       </div>
-		<!-- #BeginLibraryItem "/Library/ContactButton.lbi" -->
-    <div class="btn-container"> <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a> </div>
-    <style>
-  .btn-container {
-    display: flex;
-    justify-content: flex-end; /* Aligns button to the right */
-    padding-right: 20px; /* Adds spacing from the edge */
-  }
-
-  .btn-3d {
-    display: inline-block;
-    font-family: "Playfair Display", serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #3b2f3a; /* Dark text for contrast */
-    background-color: #f4a261; /* Warm golden-orange for contrast */
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 4px #c87b45;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .btn-3d:hover {
-    background-color: #e76f51;
-    box-shadow: 0 2px #b55439;
-    transform: translateY(2px);
-  }
-
-  .btn-3d:active {
-    background-color: #b55439;
-    box-shadow: 0 0 #b55439;
-    transform: translateY(4px);
-  }
-    </style>
-  <!-- #EndLibraryItem -->
-
+      <!-- Begin Contact Button Library -->
+      <div class="btn-container">
+        <a href="Library/contact.html" class="btn btn-3d">Let’s Create Together</a>
+      </div>
+      <!-- End Contact Button Library -->
     </nav>
+
     <section>
-  <div class="jumbotron text-center">
+      <div class="jumbotron text-center">
         <div class="container">
-          <h1>Miracle of Life Photography</h1>
-          <p>Celebrating the beauty and strength of motherhood through timeless portraits.</p>
-          <a class="btn btn-primary btn-lg" href="about_miracle.html" role="button">Learn More</a>
+          <h1>Maternity Photography</h1>
+          <p>Celebrating the beauty and strength of motherhood with intimate, artistic portraits.</p>
+          <a class="btn btn-primary btn-lg" href="about_maternity.html" role="button">Learn More</a>
         </div>
       </div>
     </section>
 
-    <!-- ✅ FIXED: Corrected Carousel Section -->
+    <!-- Carousel Section -->
     <section>
       <div class="container">
         <div class="text-center mb-4">
           <h2>Motherhood: A Work of Art</h2>
-
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <ol class="carousel-indicators"></ol> <!-- JS will generate indicators -->
-            <div class="carousel-inner"></div> <!-- JS will populate images -->
-
-            <!-- ✅ Keeping Only One Set of Navigation Arrows -->
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <div id="carouselMaternity" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators"></ol>
+            <div class="carousel-inner"></div>
+            <a class="carousel-control-prev" href="#carouselMaternity" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselMaternity" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
@@ -219,17 +216,149 @@
         localStorage.setItem("ageVerified", "true");
         document.getElementById("ageVerification").style.display = "none";
       });
-
       window.onload = function() {
         if (localStorage.getItem("ageVerified") === "true") {
           document.getElementById("ageVerification").style.display = "none";
         }
       };
     </script>
-    
-    <!-- ✅ JavaScript to Populate Carousel -->
-    <script src="js/random-carousel.js?v=6"></script>
 
+    <!-- JavaScript to Populate Carousel with 10 Randomly Selected Images from Two Folders and Set Alt Text -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Define Abby's images and corresponding alt text mapping
+        var abbyImages = [
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-12.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-13.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-14.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-15.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-16.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-17.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-19.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-1.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-2.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-3.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-4.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-5.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-8.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-9.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-10.jpg",
+          "images/maternity/abby/yugen-abby-maternity-photography-st-louis-11.jpg"
+        ];
 
+        // Mapping for Abby alt text by file number
+        var abbyAltText = {
+          "1": "Black and white fine art maternity portrait of a nude pregnant woman posed elegantly against a dark background. Dramatic lighting highlights the beauty of pregnancy and feminine strength. – Yugen Fine Art Photography, St. Louis.",
+          "2": "Intimate black and white maternity portrait of a nude pregnant woman embracing her belly, with soft shadows creating a timeless, elegant fine art composition. – Yugen Fine Art Photography, St. Louis.",
+          "3": "High-contrast black and white maternity portrait featuring a nude pregnant woman in a serene, artistic pose, celebrating the natural beauty of motherhood. – Yugen Fine Art Photography, St. Louis.",
+          "4": "Elegant fine art maternity portrait of a pregnant woman in a long black gown, gently cradling her belly. A timeless and sophisticated celebration of motherhood. – Yugen Fine Art Photography, St. Louis.",
+          "5": "Classic maternity portrait featuring a pregnant woman in a fitted black dress, hands on her belly, gazing downward in a serene and intimate moment. – Yugen Fine Art Photography, St. Louis.",
+          "8": "Timeless maternity portrait of a pregnant woman draped in soft white fabric, cradling her belly with a serene expression. A classic and elegant fine art pregnancy image. – Yugen Fine Art Photography, St. Louis.",
+          "9": "Ethereal maternity portrait of a pregnant woman standing gracefully in a sheer white gown, softly illuminated against a dark background. A refined and artistic celebration of motherhood. – Yugen Fine Art Photography, St. Louis.",
+          "10": "Elegant fine art maternity portrait of a pregnant woman in a flowing white robe, partially open to reveal her belly. A powerful and intimate depiction of pregnancy and feminine beauty. – Yugen Fine Art Photography, St. Louis.",
+          "11": "Romantic maternity portrait of a pregnant woman in a floral robe, posing gracefully against a textured rose-patterned backdrop. A timeless and elegant celebration of motherhood. – Yugen Fine Art Photography, St. Louis.",
+          "12": "Classic maternity portrait featuring a pregnant woman in a form-fitting black gown, gently cradling her belly against a soft-lit, moody backdrop. A sophisticated and timeless pregnancy image. – Yugen Fine Art Photography, St. Louis.",
+          "13": "Serene fine art maternity portrait of a pregnant woman in a black gown, eyes closed as she gently holds her belly. A powerful yet intimate depiction of pregnancy and motherhood. – Yugen Fine Art Photography, St. Louis.",
+          "14": "Artistic maternity portrait of a pregnant woman in a floral-print gown, posed elegantly against a rose-themed backdrop. A fusion of fine art and timeless motherhood imagery. – Yugen Fine Art Photography, St. Louis."
+        };
+        // Default alt text for any Abby image not in our mapping
+        var defaultAbbyAlt = "Maternity – Abby: Fine art maternity portrait. – Yugen Fine Art Photography, St. Louis.";
+
+        // Define Caroline's images
+        var carolineImages = [
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-21.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-1.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-2.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-3.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-4.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-5.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-6.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-7.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-8.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-9.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-10.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-11.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-12.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-13.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-14.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-15.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-16.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-17.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-18.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-19.jpg",
+          "images/maternity/caroline/yugen-caroline-maternity-photography-st-louis-20.jpg"
+        ];
+
+        // Combine both arrays
+        var allImages = abbyImages.concat(carolineImages);
+
+        // Shuffle the combined array (Fisher-Yates algorithm)
+        function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
+        shuffleArray(allImages);
+
+        // Select 10 images from the shuffled array
+        var selectedImages = allImages.slice(0, 10);
+
+        // Get carousel container elements
+        var indicatorsContainer = document.querySelector("#carouselMaternity .carousel-indicators");
+        var innerContainer = document.querySelector("#carouselMaternity .carousel-inner");
+
+        // Loop over selected images and create carousel items with appropriate alt text
+        selectedImages.forEach(function(src, index) {
+          var altText = "";
+          // Check if image is from Abby folder
+          if (src.indexOf("/abby/") !== -1) {
+            var fileName = src.substring(src.lastIndexOf("/") + 1);
+            var match = fileName.match(/-(\d+)\.jpg$/);
+            var num = match ? match[1] : "";
+            altText = abbyAltText[num] ? abbyAltText[num] : defaultAbbyAlt;
+          }
+          // Else if image is from Caroline folder
+          else if (src.indexOf("/caroline/") !== -1) {
+            var fileName = src.substring(src.lastIndexOf("/") + 1);
+            var match = fileName.match(/-(\d+)\.jpg$/);
+            var num = match ? parseInt(match[1]) : 0;
+            // For Caroline: images 1-7 and 18-21 use one description, 8-17 another.
+            if ((num >= 1 && num <= 7) || (num >= 18 && num <= 21)) {
+              altText = "Ethereal fine art maternity portrait of a pregnant woman draped in soft, sheer white fabric, bathed in glowing high-key light. A timeless and elegant celebration of pregnancy and motherhood. – Yugen Fine Art Photography, St. Louis.";
+            } else if (num >= 8 && num <= 17) {
+              altText = "Dramatic fine art maternity portrait of a pregnant woman in a luxurious black sheer robe, exuding confidence and elegance. The moody lighting and rich textures highlight the beauty and power of motherhood. – Yugen Fine Art Photography, St. Louis.";
+            } else {
+              altText = "Maternity – Caroline: Fine art maternity portrait. – Yugen Fine Art Photography, St. Louis.";
+            }
+          } else {
+            altText = "Maternity Photography – Yugen Fine Art Photography, St. Louis.";
+          }
+
+          // Create carousel indicator
+          var indicator = document.createElement("li");
+          indicator.setAttribute("data-target", "#carouselMaternity");
+          indicator.setAttribute("data-slide-to", index);
+          if (index === 0) {
+            indicator.classList.add("active");
+          }
+          indicatorsContainer.appendChild(indicator);
+
+          // Create carousel item with image
+          var carouselItem = document.createElement("div");
+          carouselItem.classList.add("carousel-item");
+          if (index === 0) {
+            carouselItem.classList.add("active");
+          }
+          var imgElement = document.createElement("img");
+          imgElement.src = src;
+          imgElement.alt = altText;
+          imgElement.classList.add("d-block", "w-100");
+
+          carouselItem.appendChild(imgElement);
+          innerContainer.appendChild(carouselItem);
+        });
+      });
+    </script>
   </body>
 </html>
