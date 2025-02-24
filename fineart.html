@@ -180,30 +180,79 @@
 </main>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let totalImages = 44; // Total images in the directory
-        let selectedImages = [];
-        let imageBasePath = "images/FineArt/";
-        let carouselInner = document.getElementById("carouselInner");
-        
-        // Generate an array of all image filenames
-        let allImages = Array.from({ length: totalImages }, (_, i) => `yugenfineart_no${i + 1}.jpg`);
-        
-        // Shuffle and pick 10 images randomly
-        while (selectedImages.length < 10) {
-            let randomIndex = Math.floor(Math.random() * allImages.length);
-            let selectedImage = allImages.splice(randomIndex, 1)[0]; // Remove selected image to avoid duplicates
-            selectedImages.push(selectedImage);
-        }
-        
-        // Populate the carousel with selected images
-        selectedImages.forEach((image, index) => {
-            let div = document.createElement("div");
-            div.className = "carousel-item" + (index === 0 ? " active" : "");
-            div.innerHTML = `<img src="${imageBasePath}${image}" alt="${image}" class="d-block w-100">`;
-            carouselInner.appendChild(div);
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    let totalImages = 44; // Total images in the directory
+    let selectedImages = [];
+    let imageBasePath = "images/FineArt/"; // Relative path for images
+    let carouselInner = document.getElementById("carouselInner");
+
+    // Generate an array of all image filenames using the new naming convention
+    let allImages = Array.from({ length: totalImages }, (_, i) => `yugen-fine-art-photography-st-louis-${i + 1}.jpg`);
+
+    // Object mapping each image filename to its alt text for SEO
+    let altTexts = {
+        "yugen-fine-art-photography-st-louis-1.jpg": "Dark gothic fine art portrait of a woman with dramatic black makeup and a feathered headpiece in a graveyard setting. Moody lighting enhances the eerie aesthetic. Perfect for gothic home decor. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-2.jpg": "Vibrant studio portrait of a woman in a shimmering silver gown, dramatically posed under neon pink and blue lighting. High-fashion editorial photography with a futuristic aesthetic. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-3.jpg": "Elegant woman in a deep blue evening gown, illuminated by cinematic moody lighting against a red moon backdrop. A striking fine art portrait for luxury wall decor. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-4.jpg": "Surreal artistic portrait of a woman in a shimmering dress, bathed in neon pink and blue lighting. A modern blend of fine art and digital effects. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-5.jpg": "Golden goddess portrait set against a celestial backdrop of swirling fiery hues. A bold, ethereal fine art piece capturing divine femininity. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-6.jpg": "Fiery high-fashion portrait of a woman in a flowing golden gown, enveloped by cosmic pink and red flames. A dramatic artistic statement piece. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-7.jpg": "Regal woman adorned in a golden silk gown with an intricate gemstone crown, draped in rich pink fabric. A divine, ethereal fine art portrait for luxurious interiors. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-8.jpg": "Fantasy-inspired portrait of a woman with luminous purple fairy wings, dressed in bold black lingerie. A surreal and mystical fine art photograph. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-9.jpg": "High-contrast black and white editorial portrait of a woman mid-motion, making a bold expression. A striking statement piece for modern art collectors. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-10.jpg": "Fine art nude portrait of a tattooed woman with fiery red hair, curled into an introspective pose against a textured dark background. A timeless and emotive artistic print. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-11.jpg": "Black and white conceptual photography diptych featuring three women transitioning from fully clothed to nude, highlighting themes of identity, confidence, and artistic expression. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-12.jpg": "Ethereal religious fine art scene of a woman kneeling in a dimly lit ancient room, looking towards a glowing, angelic figure bathed in divine light. A timeless spiritual portrait. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-13.jpg": "Nude fine art portrait of a tattooed woman draped in red silk, her face partially obscured as the fabric flows around her. An elegant, expressive take on form and movement. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-14.jpg": "Nude fine art portrait of a tattooed woman draped in red silk, her face partially obscured as the fabric flows around her. An elegant, expressive take on form and movement. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-15.jpg": "Striking artistic nude of a tattooed woman standing against a dark background, wrapped in rich red fabric. A celebration of femininity, texture, and contrast. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-16.jpg": "Surreal fine art nude featuring a tattooed woman enshrouded in deep red silk, illuminated by warm light. A bold and dramatic artistic composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-17.jpg": "Nude portrait of a woman in dynamic motion, red silk billowing around her as she moves gracefully against a black background. A study in movement and light. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-18.jpg": "Elegant fine art nude of a tattooed woman posed with flowing red fabric, bathed in soft golden light against a dramatic dark backdrop. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-19.jpg": "High-fashion fine art nude of a woman mid-leap, red silk trailing in the air, creating a powerful sense of movement and expression. A striking contemporary art piece. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-20.jpg": "Moody fine art nude of a tattooed woman with red silk fabric framing her body, an evocative interplay of shadows and highlights. A captivating artistic statement. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-21.jpg": "Minimalist fine art nude of a tattooed woman draped in a sheer pink veil, posed against a bright white background with elegant framing. A timeless and ethereal contemporary art piece. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-22.jpg": "Surreal painting-inspired fine art nude of a woman bathed in cosmic light, surrounded by a celestial storm of fiery and iridescent hues. A dreamlike vision of beauty and power. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-23.jpg": "High-fashion portrait of a regal Black woman adorned in a golden metallic gown, with striking jewelry and a head wrap, set against a warm textured background. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-24.jpg": "Intimate fine art portrait of a woman holding a single red rose, bathed in warm golden light, evoking themes of romance and timeless beauty. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-25.jpg": "Moody fine art nude of a woman seated with her back turned, wrapped in deep red silk, her skin softly illuminated against a painterly green backdrop. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-26.jpg": "Classic fine art nude of a woman draped in red silk, turned away from the viewer in an introspective pose, with chiaroscuro-inspired lighting. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-27.jpg": "Art Nouveau-inspired portrait of a woman in a Victorian corset and tulle skirt, posed in front of a floral, decorative frame, evoking a vintage and romantic aesthetic. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-28.jpg": "Vintage-inspired fine art portrait of a woman in an ornate corset and tulle gown, with soft curls and a classic top hat, posed in front of an Art Nouveau-style floral frame. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-29.jpg": "Dramatic fine art portrait of a woman in a flowing red gown, standing against an abstract fiery red and orange background, creating a powerful, ethereal effect. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-30.jpg": "Fantasy-inspired portrait of a fairy woman kneeling on mossy ground, wearing dark wings and black lingerie, set against a misty enchanted forest with a gothic castle in the distance. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-31.jpg": "Enchanted fantasy portrait of a fairy woman kneeling by a mystical lake, with translucent wings, surrounded by lush greenery and a castle reflecting in the water. A magical fine art composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-32.jpg": "Moody fine art portrait of a woman with deep red hair, holding a flaming rose. A surreal and symbolic representation of passion, destruction, and beauty. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-33.jpg": "Minimalist fine art nude silhouette of a woman dynamically posed with circular props against a high-contrast white background, creating a bold and modern composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-34.jpg": "High-contrast black and white fine art nude silhouette of a woman holding two circular shapes, emphasizing geometric balance, symmetry, and artistic abstraction. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-35.jpg": "Dramatic religious fine art piece depicting a sorrowful woman in a hooded robe gazing upward, with a crucifixion scene in the stormy background. A deeply emotional spiritual composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-36.jpg": "Dramatic religious fine art portrait of a woman in biblical attire, kneeling on a dusty path, reaching toward the heavens, framed by an ancient landscape with storm clouds overhead. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-37.jpg": "Intimate fine art portrait of a woman in golden biblical robes, eyes closed in deep emotion, hands clasped in sorrow and devotion. A powerful spiritual composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-38.jpg": "Majestic high-fashion fine art portrait of two Black women dressed in opulent golden gowns, adorned with celestial crowns and holding a radiant staff. A striking vision of divine femininity and power. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-39.jpg": "Surreal fantasy portrait of a woman in a shimmering zebra-pattern bodysuit, kneeling beside a glowing, mystical waterfall in an ethereal dreamscape with floating orbs and vibrant colors. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-40.jpg": "High-contrast fine art nude silhouette of a woman reclining on a pedestal, balancing two circular props in an abstract composition against a stark white background. A bold minimalist art piece. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-41.jpg": "Elegant fine art nude silhouette of a woman gracefully holding two geometric circular props, arching her back in a dynamic pose against a high-contrast white background. A striking study of form and movement. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-42.jpg": "Abstract fine art nude silhouette of a woman in motion, holding two circular props while leaning back dramatically, creating a sense of balance and fluidity. A captivating minimalist composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-43.jpg": "Surreal fine art nude portrait of a woman with luminous green skin and neon yellow hair, crying out against a cosmic sky filled with vibrant swirling colors. A dreamlike, emotional artistic composition. – Yugen Fine Art Photography, St. Louis.",
+        "yugen-fine-art-photography-st-louis-44.jpg": "High-fashion portrait of a woman in a metallic black gown, dramatically posed with bold blue and red lighting, creating a striking contrast of color and form. A powerful editorial fine art piece. – Yugen Fine Art Photography, St. Louis."
+    };
+
+    // Shuffle and pick 10 images randomly
+    while (selectedImages.length < 10) {
+        let randomIndex = Math.floor(Math.random() * allImages.length);
+        let selectedImage = allImages.splice(randomIndex, 1)[0]; // Remove selected image to avoid duplicates
+        selectedImages.push(selectedImage);
+    }
+
+    // Populate the carousel with selected images, including alt text for SEO
+    selectedImages.forEach((image, index) => {
+        let altText = altTexts[image] || "Fine art photography image";
+        let div = document.createElement("div");
+        div.className = "carousel-item" + (index === 0 ? " active" : "");
+        div.innerHTML = `<img src="${imageBasePath}${image}" alt="${altText}" class="d-block w-100">`;
+        carouselInner.appendChild(div);
     });
+});
 </script>
 
 
