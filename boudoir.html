@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yugen Fine Art Photography</title>
-	  <link rel="canonical" href="https://www.yugenphotog.com/">
+    <link rel="canonical" href="https://www.yugenphotog.com/">
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -93,8 +93,6 @@
     </style>
   </head>
   <body>
-    
-
     <nav class="navbar navbar-expand-lg">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -164,7 +162,7 @@
       </div>
     </section>
 
-    <!-- ✅ Corrected Carousel Section -->
+    <!-- ✅ Carousel Section with 10 Random Images -->
     <section>
       <div class="container">
         <div class="text-center mb-4">
@@ -228,9 +226,88 @@
         }
       };
     </script>
-    
-    <!-- JavaScript to Populate Carousel -->
-    <script src="js/boudoir-carousel.js"></script>
 
+    <!-- JavaScript to Populate Carousel with 10 Randomly Selected Images -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var allImages = [
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-34.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-1.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-2.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-3.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-4.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-5.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-6.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-7.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-8.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-9.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-10.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-11.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-12.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-13.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-14.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-15.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-16.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-17.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-18.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-19.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-20.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-21.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-22.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-23.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-24.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-25.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-26.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-27.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-28.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-29.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-30.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-31.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-32.jpg",
+          "images/Boudoir/yugen-artful-intimacy-boudoir-photography-st-louis-33.jpg"
+        ];
+
+        // Shuffle the array using the Fisher-Yates algorithm
+        function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
+        shuffleArray(allImages);
+        
+        // Select only 10 images from the shuffled array
+        var selectedImages = allImages.slice(0, 10);
+
+        var indicatorsContainer = document.querySelector("#carouselBoudoir .carousel-indicators");
+        var innerContainer = document.querySelector("#carouselBoudoir .carousel-inner");
+
+        selectedImages.forEach(function(src, index) {
+          // Create carousel indicator
+          var indicator = document.createElement("li");
+          indicator.setAttribute("data-target", "#carouselBoudoir");
+          indicator.setAttribute("data-slide-to", index);
+          if (index === 0) {
+            indicator.classList.add("active");
+          }
+          indicatorsContainer.appendChild(indicator);
+
+          // Create carousel item
+          var carouselItem = document.createElement("div");
+          carouselItem.classList.add("carousel-item");
+          if (index === 0) {
+            carouselItem.classList.add("active");
+          }
+
+          var imgElement = document.createElement("img");
+          imgElement.src = src;
+          imgElement.alt = "Boudoir image " + (index + 1);
+          imgElement.classList.add("d-block", "w-100");
+
+          carouselItem.appendChild(imgElement);
+          innerContainer.appendChild(carouselItem);
+        });
+      });
+    </script>
   </body>
 </html>
