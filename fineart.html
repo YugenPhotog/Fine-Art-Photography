@@ -1,196 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yugen Fine Art</title>
-	<link rel="canonical" href="https://www.yugenphotog.com/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yugen Fine Art</title>
+  <link rel="canonical" href="https://www.yugenphotog.com/">
 
+  <!-- Bootstrap -->
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* General Styling */
+    body {
+      font-family: "Georgia", serif;
+      background-color: #3b2f3a;
+      color: #f4f4f4;
+    }
+    .navbar {
+      background-color: #8b5e83;
+    }
+    .navbar-brand, .nav-link {
+      font-family: "Playfair Display", serif;
+      color: #ffffff !important;
+    }
+    h1, h2, h3, h4 {
+      color: #e6d5ea;
+      font-family: "Playfair Display", serif;
+    }
+    .carousel-item img {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: 90vh;
+      object-fit: contain;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #8b5e83;
+      border-radius: 50%;
+      padding: 10px;
+    }
+    footer {
+      background-color: #8b5e83;
+      color: #ffffff;
+      padding: 1rem 0;
+    }
+    footer p, footer a {
+      color: #ffffff;
+      margin: 0;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* Age Verification Popup */
+    #ageVerification {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #ageVerification p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    #ageVerification button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #8b5e83;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #ageVerification button:hover {
+      background-color: #6a4671;
+    }
+    
+    @media (max-width: 768px) {
+      .jumbotron, section {
+        padding: 1rem;
+      }
+      .carousel-inner img {
+        max-height: 70vh;
+      }
+    }
 
-    <style>
-        /* General Styling */
-        body {
-            font-family: "Georgia", serif;
-            background-color: #3b2f3a; /* Dark grey with a hint of purple */
-            color: #f4f4f4;
-        }
-        .navbar {
-            background-color: #8b5e83;
-        }
-        .navbar-brand, .nav-link {
-            font-family: "Playfair Display", serif;
-            color: #ffffff !important;
-        }
-        h1, h2, h3, h4 {
-            color: #e6d5ea;
-            font-family: "Playfair Display", serif;
-        }
-        .carousel-item img {
-            display: block;
-            margin: 0 auto;
-            width: auto;
-            height: 90vh;
-            object-fit: contain;
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: #8b5e83;
-            border-radius: 50%;
-            padding: 10px;
-        }
-        footer {
-            background-color: #8b5e83;
-            color: #ffffff;
-            padding: 1rem 0;
-        }
-        footer p, footer a {
-            color: #ffffff;
-            margin: 0;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Age Verification Popup */
-        #ageVerification {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        #ageVerification p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        #ageVerification button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #8b5e83;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #ageVerification button:hover {
-            background-color: #6a4671;
-        }
-        
-        @media (max-width: 768px) {
-            .jumbotron, section {
-                padding: 1rem;
-            }
-            .carousel-inner img {
-                max-height: 70vh;
-            }
-        }
-
-        /* Gallery Button */
-        .button-container {
-            display: flex;
-            justify-content: center; /* Centers the button */
-            margin-top: 20px;
-        }
-
-        .btn-gallery {
-            display: inline-block;
-            font-family: "Playfair Display", serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #3b2f3a; /* Darker text for contrast */
-            background-color: #f4a261; /* Warm golden-orange */
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px #c87b45;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .btn-gallery:hover {
-            background-color: #e76f51;
-            box-shadow: 0 2px #b55439;
-            transform: translateY(2px);
-        }
-
-        .btn-gallery:active {
-            background-color: #b55439;
-            box-shadow: 0 0 #b55439;
-            transform: translateY(4px);
-        }
-    </style>
+    /* Gallery Button */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .btn-gallery {
+      display: inline-block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #3b2f3a;
+      background-color: #f4a261;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px #c87b45;
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-gallery:hover {
+      background-color: #e76f51;
+      box-shadow: 0 2px #b55439;
+      transform: translateY(2px);
+    }
+    .btn-gallery:active {
+      background-color: #b55439;
+      box-shadow: 0 0 #b55439;
+      transform: translateY(4px);
+    }
+  </style>
 </head>
 
 <body>
-      <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
         
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="fineart.html">Yugen Fine Art</a></li>
-                <li class="nav-item"><a class="nav-link" href="boudoir.html">Artful Intimacy</a></li>
-                <li class="nav-item"><a class="nav-link" href="miracle.html">Miracle of Life</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="fineart.html">Yugen Fine Art</a></li>
+        <li class="nav-item"><a class="nav-link" href="boudoir.html">Artful Intimacy</a></li>
+        <li class="nav-item"><a class="nav-link" href="miracle.html">Miracle of Life</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Section Title -->
-    <section class="text-center my-5">
-        <div class="container">
-            <h1>Yugen Fine Art</h1>
-            <p>Artistry that Speaks without Words</p>
-        </div>
-    </section>
+  <!-- Section Title -->
+  <section class="text-center my-5">
+    <div class="container">
+      <h1>Yugen Fine Art</h1>
+      <p>Artistry that Speaks without Words</p>
+    </div>
+  </section>
 
-    <!-- Carousel Section -->
-<main>
+  <!-- Carousel Section -->
+  <main>
     <section class="my-5">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <div class="carousel-inner" id="carouselInner">
-                <!-- Images will be inserted dynamically here -->
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators" id="carouselIndicators"></ol>
+        <!-- Carousel Items -->
+        <div class="carousel-inner" id="carouselInner">
+          <!-- Images will be inserted dynamically here -->
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </section>
-</main>
+  </main>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    let totalImages = 44; // Total images in the directory
-    let selectedImages = [];
-    let imageBasePath = "images/FineArt/"; // Relative path for images
-    let carouselInner = document.getElementById("carouselInner");
+  <!-- Call to Action Button -->
+  <div class="button-container">
+    <a href="https://YugenPhotog.pixieset.com/artgallery/" class="btn-gallery">Own a Piece of the Art</a>
+  </div>
 
-    // Generate an array of all image filenames using the new naming convention
-    let allImages = Array.from({ length: totalImages }, (_, i) => `yugen-fine-art-photography-st-louis-${i + 1}.jpg`);
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; Yugen Photography. All rights reserved.</p>
+    </div>
+  </footer>
 
-    // Object mapping each image filename to its alt text for SEO
-    let altTexts = {
+  <!-- Disable Right-Click -->
+  <script>
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+  </script>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+
+  <!-- Age Verification Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let agePopup = document.getElementById("ageVerification");
+      let confirmButton = document.getElementById("confirmAge");
+
+      if (!agePopup || !confirmButton) {
+        console.error("Age verification elements not found.");
+        return;
+      }
+
+      // Delay the check to ensure proper display
+      setTimeout(() => {
+        if (localStorage.getItem("ageVerified") !== "true") {
+          agePopup.style.display = "flex";
+        }
+      }, 500);
+
+      confirmButton.addEventListener("click", function () {
+        localStorage.setItem("ageVerified", "true");
+        agePopup.style.display = "none";
+      });
+    });
+  </script>
+
+  <!-- JavaScript to Populate Carousel with 10 Randomly Selected Images -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const totalImages = 44; // Total number of images in the directory
+      const imageBasePath = "images/FineArt/";
+      const carouselInner = document.getElementById("carouselInner");
+      const carouselIndicators = document.getElementById("carouselIndicators");
+
+      // Generate array of image filenames using the naming convention
+      let allImages = Array.from({ length: totalImages }, (_, i) => `yugen-fine-art-photography-st-louis-${i + 1}.jpg`);
+
+      // Object mapping filenames to alt text for SEO
+      const altTexts = {
         "yugen-fine-art-photography-st-louis-1.jpg": "Dark gothic fine art portrait of a woman with dramatic black makeup and a feathered headpiece in a graveyard setting. Moody lighting enhances the eerie aesthetic. Perfect for gothic home decor. – Yugen Fine Art Photography, St. Louis.",
         "yugen-fine-art-photography-st-louis-2.jpg": "Vibrant studio portrait of a woman in a shimmering silver gown, dramatically posed under neon pink and blue lighting. High-fashion editorial photography with a futuristic aesthetic. – Yugen Fine Art Photography, St. Louis.",
         "yugen-fine-art-photography-st-louis-3.jpg": "Elegant woman in a deep blue evening gown, illuminated by cinematic moody lighting against a red moon backdrop. A striking fine art portrait for luxury wall decor. – Yugen Fine Art Photography, St. Louis.",
@@ -235,76 +285,41 @@ document.addEventListener("DOMContentLoaded", function () {
         "yugen-fine-art-photography-st-louis-42.jpg": "Abstract fine art nude silhouette of a woman in motion, holding two circular props while leaning back dramatically, creating a sense of balance and fluidity. A captivating minimalist composition. – Yugen Fine Art Photography, St. Louis.",
         "yugen-fine-art-photography-st-louis-43.jpg": "Surreal fine art nude portrait of a woman with luminous green skin and neon yellow hair, crying out against a cosmic sky filled with vibrant swirling colors. A dreamlike, emotional artistic composition. – Yugen Fine Art Photography, St. Louis.",
         "yugen-fine-art-photography-st-louis-44.jpg": "High-fashion portrait of a woman in a metallic black gown, dramatically posed with bold blue and red lighting, creating a striking contrast of color and form. A powerful editorial fine art piece. – Yugen Fine Art Photography, St. Louis."
-    };
+      };
 
-    // Shuffle and pick 10 images randomly
-    while (selectedImages.length < 10) {
-        let randomIndex = Math.floor(Math.random() * allImages.length);
-        let selectedImage = allImages.splice(randomIndex, 1)[0]; // Remove selected image to avoid duplicates
-        selectedImages.push(selectedImage);
-    }
+      // Shuffle the array using the Fisher-Yates algorithm
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      shuffleArray(allImages);
 
-    // Populate the carousel with selected images, including alt text for SEO
-    selectedImages.forEach((image, index) => {
-        let altText = altTexts[image] || "Fine art photography image";
-        let div = document.createElement("div");
+      // Select 10 images from the shuffled array
+      const selectedImages = allImages.slice(0, 10);
+
+      // Populate the carousel with selected images and create indicators
+      selectedImages.forEach((image, index) => {
+        const altText = altTexts[image] || "Fine art photography image";
+
+        // Create and append indicator
+        const indicator = document.createElement("li");
+        indicator.setAttribute("data-target", "#carouselExampleIndicators");
+        indicator.setAttribute("data-slide-to", index);
+        if (index === 0) {
+          indicator.classList.add("active");
+        }
+        carouselIndicators.appendChild(indicator);
+
+        // Create and append carousel item
+        const div = document.createElement("div");
         div.className = "carousel-item" + (index === 0 ? " active" : "");
         div.innerHTML = `<img src="${imageBasePath}${image}" alt="${altText}" class="d-block w-100">`;
         carouselInner.appendChild(div);
-    });
-});
-</script>
-
-
-    <!-- Call to Action Button -->
-    <div class="button-container">
-        <a href="https://YugenPhotog.pixieset.com/artgallery/" class="btn-gallery">Own a Piece of the Art</a>
-    </div>
-
-    <!-- Footer -->
-<footer class="text-center">
-        <div class="container">
-            <p>&copy; Yugen Photography. All rights reserved.</p>
-        </div>
-</footer>
-
-	<!-- Disable Right-Click -->
-    <script>
-      document.addEventListener("contextmenu", function(e) {
-        e.preventDefault();
       });
-    </script>
-<!-- jQuery and Bootstrap JS -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.4.1.js"></script>
-
-    <!-- Age Verification Script -->
-	<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let agePopup = document.getElementById("ageVerification");
-        let confirmButton = document.getElementById("confirmAge");
-
-        if (!agePopup || !confirmButton) {
-            console.error("Age verification elements not found.");
-            return;
-        }
-
-        // Delay the check to ensure proper display
-        setTimeout(() => {
-            if (localStorage.getItem("ageVerified") !== "true") {
-                agePopup.style.display = "flex"; // Show popup only if not verified
-            }
-        }, 500); // Small delay to prevent flickering
-
-        // When user confirms age
-        confirmButton.addEventListener("click", function () {
-            localStorage.setItem("ageVerified", "true");
-            agePopup.style.display = "none";
-        });
     });
-</script>
-
+  </script>
 
 </body>
 </html>
