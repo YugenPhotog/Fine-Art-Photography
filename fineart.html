@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yugen Fine Art</title>
+  <title>Yugen Fine Art | Exquisite Fine Art Photography & Prints</title>
+  <meta name="description" content="Discover museum-quality fine art photography prints by Yugen Fine Art. Timeless, elegant, and meticulously crafted for your home.">
   <link rel="canonical" href="https://www.yugenphotog.com/">
 
   <!-- Bootstrap -->
   <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
   <style>
     /* General Styling */
@@ -18,90 +21,35 @@
       background-color: #3b2f3a;
       color: #f4f4f4;
     }
+
     .navbar {
       background-color: #8b5e83;
     }
+
     .navbar-brand, .nav-link {
       font-family: "Playfair Display", serif;
       color: #ffffff !important;
     }
+
     h1, h2, h3, h4 {
-      color: #e6d5ea;
+      color: #8b5e83; /* Matched to Artful Intimacy */
       font-family: "Playfair Display", serif;
     }
-    .carousel-item img {
-      display: block;
-      margin: 0 auto;
-      width: auto;
-      height: 90vh;
-      object-fit: contain;
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: #8b5e83;
-      border-radius: 50%;
-      padding: 10px;
-    }
-    footer {
-      background-color: #8b5e83;
-      color: #ffffff;
-      padding: 1rem 0;
-    }
-    footer p, footer a {
-      color: #ffffff;
-      margin: 0;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    /* Age Verification Popup */
-    #ageVerification {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    #ageVerification p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+
+    /* Jumbotron Section (Title Background) */
+    .jumbotron-title {
+      background: url('images/Shared/jumbotron.png') center/cover no-repeat;
+      padding: 6rem 2rem;
       text-align: center;
-    }
-    #ageVerification button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      background-color: #8b5e83;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #ageVerification button:hover {
-      background-color: #6a4671;
-    }
-    
-    @media (max-width: 768px) {
-      .jumbotron, section {
-        padding: 1rem;
-      }
-      .carousel-inner img {
-        max-height: 70vh;
-      }
+      color: #8b5e83; /* Now matches Artful Intimacy */
     }
 
     /* Gallery Button */
     .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
+      text-align: center;
+      margin-top: 30px;
     }
+
     .btn-gallery {
       display: inline-block;
       font-family: "Playfair Display", serif;
@@ -115,15 +63,40 @@
       box-shadow: 0 4px #c87b45;
       transition: all 0.2s ease-in-out;
     }
+
     .btn-gallery:hover {
       background-color: #e76f51;
       box-shadow: 0 2px #b55439;
       transform: translateY(2px);
     }
-    .btn-gallery:active {
-      background-color: #b55439;
-      box-shadow: 0 0 #b55439;
-      transform: translateY(4px);
+
+    /* Carousel Styling */
+    .carousel-item img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+
+    .carousel-inner {
+      height: 85vh;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #8b5e83;
+      color: #ffffff;
+      padding: 1rem 0;
+    }
+
+    footer p, footer a {
+      color: #ffffff;
+      margin: 0;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -136,7 +109,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-        
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -150,11 +123,10 @@
   </nav>
 
   <!-- Section Title -->
-  <section class="text-center my-5">
+  <section class="jumbotron-title">
     <div class="container">
-      <h1>Yugen Fine Art | Museum-Quality Prints for Your Home</h1>
-<h2>Every Image, a Masterpiece – Crafted for Inspired Living</h2>
-
+      <h1>Yugen Fine Art | Timeless Elegance in Every Print</h1>
+      <h2>Transform Your Space with Museum-Quality Photography</h2>
     </div>
   </section>
 
@@ -165,9 +137,7 @@
         <!-- Carousel Indicators -->
         <ol class="carousel-indicators" id="carouselIndicators"></ol>
         <!-- Carousel Items -->
-        <div class="carousel-inner" id="carouselInner">
-          <!-- Images will be inserted dynamically here -->
-        </div>
+        <div class="carousel-inner" id="carouselInner"></div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -180,26 +150,56 @@
     </section>
   </main>
 
+  <!-- JavaScript to Populate Carousel with 10 Randomly Selected Images -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const totalImages = 44;
+      const imageBasePath = "images/FineArt/";
+      const carouselInner = document.getElementById("carouselInner");
+      const carouselIndicators = document.getElementById("carouselIndicators");
+
+      let allImages = Array.from({ length: totalImages }, (_, i) => `yugen-fine-art-photography-st-louis-${i + 1}.jpg`);
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      shuffleArray(allImages);
+      const selectedImages = allImages.slice(0, 10);
+
+      selectedImages.forEach((image, index) => {
+        const indicator = document.createElement("li");
+        indicator.setAttribute("data-target", "#carouselExampleIndicators");
+        indicator.setAttribute("data-slide-to", index);
+        if (index === 0) {
+          indicator.classList.add("active");
+        }
+        carouselIndicators.appendChild(indicator);
+
+        const div = document.createElement("div");
+        div.className = "carousel-item" + (index === 0 ? " active" : "");
+        div.innerHTML = `<img src="${imageBasePath}${image}" alt="Fine art photography image" class="d-block w-100">`;
+        carouselInner.appendChild(div);
+      });
+    });
+  </script>
+
   <!-- Call to Action Button -->
   <div class="button-container">
-    <a href="https://YugenPhotog.pixieset.com/artgallery/" class="btn-gallery">Browse our gallery and bring a touch of artistry to your home.</a>
+    <a href="https://YugenPhotog.pixieset.com/artgallery/" class="btn-gallery">
+      Browse our gallery and bring a touch of artistry to your home.
+    </a>
   </div>
 
   <!-- Footer -->
   <footer class="text-center">
-      <div class="container">
-        <p>&copy; Yugen Photography. All rights reserved.</p>
-        <a href="https://www.instagram.com/yugenphotog/" target="_blank" class="text-white">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://x.com/YugenPhotog" target="_blank" class="text-white">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.flickr.com/photos/yugen_photo/" target="_blank" class="text-white">
-          <i class="fab fa-flickr"></i>
-        </a>
-      </div>
-    </footer>
+    <div class="container">
+      <p>&copy; Yugen Photography. All rights reserved.</p>
+    </div>
+  </footer>
 
   <!-- Disable Right-Click -->
   <script>
@@ -212,124 +212,6 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap-4.4.1.js"></script>
-
-  <!-- Age Verification Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let agePopup = document.getElementById("ageVerification");
-      let confirmButton = document.getElementById("confirmAge");
-
-      if (!agePopup || !confirmButton) {
-        console.error("Age verification elements not found.");
-        return;
-      }
-
-      // Delay the check to ensure proper display
-      setTimeout(() => {
-        if (localStorage.getItem("ageVerified") !== "true") {
-          agePopup.style.display = "flex";
-        }
-      }, 500);
-
-      confirmButton.addEventListener("click", function () {
-        localStorage.setItem("ageVerified", "true");
-        agePopup.style.display = "none";
-      });
-    });
-  </script>
-
-  <!-- JavaScript to Populate Carousel with 10 Randomly Selected Images -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const totalImages = 44; // Total number of images in the directory
-      const imageBasePath = "images/FineArt/";
-      const carouselInner = document.getElementById("carouselInner");
-      const carouselIndicators = document.getElementById("carouselIndicators");
-
-      // Generate array of image filenames using the naming convention
-      let allImages = Array.from({ length: totalImages }, (_, i) => `yugen-fine-art-photography-st-louis-${i + 1}.jpg`);
-
-      // Object mapping filenames to alt text for SEO
-      const altTexts = {
-        "yugen-fine-art-photography-st-louis-1.jpg": "Dark gothic fine art portrait of a woman with dramatic black makeup and a feathered headpiece in a graveyard setting. Moody lighting enhances the eerie aesthetic. Perfect for gothic home decor. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-2.jpg": "Vibrant studio portrait of a woman in a shimmering silver gown, dramatically posed under neon pink and blue lighting. High-fashion editorial photography with a futuristic aesthetic. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-3.jpg": "Elegant woman in a deep blue evening gown, illuminated by cinematic moody lighting against a red moon backdrop. A striking fine art portrait for luxury wall decor. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-4.jpg": "Surreal artistic portrait of a woman in a shimmering dress, bathed in neon pink and blue lighting. A modern blend of fine art and digital effects. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-5.jpg": "Golden goddess portrait set against a celestial backdrop of swirling fiery hues. A bold, ethereal fine art piece capturing divine femininity. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-6.jpg": "Fiery high-fashion portrait of a woman in a flowing golden gown, enveloped by cosmic pink and red flames. A dramatic artistic statement piece. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-7.jpg": "Regal woman adorned in a golden silk gown with an intricate gemstone crown, draped in rich pink fabric. A divine, ethereal fine art portrait for luxurious interiors. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-8.jpg": "Fantasy-inspired portrait of a woman with luminous purple fairy wings, dressed in bold black lingerie. A surreal and mystical fine art photograph. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-9.jpg": "High-contrast black and white editorial portrait of a woman mid-motion, making a bold expression. A striking statement piece for modern art collectors. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-10.jpg": "Fine art nude portrait of a tattooed woman with fiery red hair, curled into an introspective pose against a textured dark background. A timeless and emotive artistic print. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-11.jpg": "Black and white conceptual photography diptych featuring three women transitioning from fully clothed to nude, highlighting themes of identity, confidence, and artistic expression. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-12.jpg": "Ethereal religious fine art scene of a woman kneeling in a dimly lit ancient room, looking towards a glowing, angelic figure bathed in divine light. A timeless spiritual portrait. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-13.jpg": "Nude fine art portrait of a tattooed woman draped in red silk, her face partially obscured as the fabric flows around her. An elegant, expressive take on form and movement. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-14.jpg": "Nude fine art portrait of a tattooed woman draped in red silk, her face partially obscured as the fabric flows around her. An elegant, expressive take on form and movement. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-15.jpg": "Striking artistic nude of a tattooed woman standing against a dark background, wrapped in rich red fabric. A celebration of femininity, texture, and contrast. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-16.jpg": "Surreal fine art nude featuring a tattooed woman enshrouded in deep red silk, illuminated by warm light. A bold and dramatic artistic composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-17.jpg": "Nude portrait of a woman in dynamic motion, red silk billowing around her as she moves gracefully against a black background. A study in movement and light. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-18.jpg": "Elegant fine art nude of a tattooed woman posed with flowing red fabric, bathed in soft golden light against a dramatic dark backdrop. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-19.jpg": "High-fashion fine art nude of a woman mid-leap, red silk trailing in the air, creating a powerful sense of movement and expression. A striking contemporary art piece. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-20.jpg": "Moody fine art nude of a tattooed woman with red silk fabric framing her body, an evocative interplay of shadows and highlights. A captivating artistic statement. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-21.jpg": "Minimalist fine art nude of a tattooed woman draped in a sheer pink veil, posed against a bright white background with elegant framing. A timeless and ethereal contemporary art piece. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-22.jpg": "Surreal painting-inspired fine art nude of a woman bathed in cosmic light, surrounded by a celestial storm of fiery and iridescent hues. A dreamlike vision of beauty and power. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-23.jpg": "High-fashion portrait of a regal Black woman adorned in a golden metallic gown, with striking jewelry and a head wrap, set against a warm textured background. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-24.jpg": "Intimate fine art portrait of a woman holding a single red rose, bathed in warm golden light, evoking themes of romance and timeless beauty. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-25.jpg": "Moody fine art nude of a woman seated with her back turned, wrapped in deep red silk, her skin softly illuminated against a painterly green backdrop. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-26.jpg": "Classic fine art nude of a woman draped in red silk, turned away from the viewer in an introspective pose, with chiaroscuro-inspired lighting. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-27.jpg": "Art Nouveau-inspired portrait of a woman in a Victorian corset and tulle skirt, posed in front of a floral, decorative frame, evoking a vintage and romantic aesthetic. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-28.jpg": "Vintage-inspired fine art portrait of a woman in an ornate corset and tulle gown, with soft curls and a classic top hat, posed in front of an Art Nouveau-style floral frame. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-29.jpg": "Dramatic fine art portrait of a woman in a flowing red gown, standing against an abstract fiery red and orange background, creating a powerful, ethereal effect. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-30.jpg": "Fantasy-inspired portrait of a fairy woman kneeling on mossy ground, wearing dark wings and black lingerie, set against a misty enchanted forest with a gothic castle in the distance. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-31.jpg": "Enchanted fantasy portrait of a fairy woman kneeling by a mystical lake, with translucent wings, surrounded by lush greenery and a castle reflecting in the water. A magical fine art composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-32.jpg": "Moody fine art portrait of a woman with deep red hair, holding a flaming rose. A surreal and symbolic representation of passion, destruction, and beauty. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-33.jpg": "Minimalist fine art nude silhouette of a woman dynamically posed with circular props against a high-contrast white background, creating a bold and modern composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-34.jpg": "High-contrast black and white fine art nude silhouette of a woman holding two circular shapes, emphasizing geometric balance, symmetry, and artistic abstraction. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-35.jpg": "Dramatic religious fine art piece depicting a sorrowful woman in a hooded robe gazing upward, with a crucifixion scene in the stormy background. A deeply emotional spiritual composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-36.jpg": "Dramatic religious fine art portrait of a woman in biblical attire, kneeling on a dusty path, reaching toward the heavens, framed by an ancient landscape with storm clouds overhead. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-37.jpg": "Intimate fine art portrait of a woman in golden biblical robes, eyes closed in deep emotion, hands clasped in sorrow and devotion. A powerful spiritual composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-38.jpg": "Majestic high-fashion fine art portrait of two Black women dressed in opulent golden gowns, adorned with celestial crowns and holding a radiant staff. A striking vision of divine femininity and power. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-39.jpg": "Surreal fantasy portrait of a woman in a shimmering zebra-pattern bodysuit, kneeling beside a glowing, mystical waterfall in an ethereal dreamscape with floating orbs and vibrant colors. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-40.jpg": "High-contrast fine art nude silhouette of a woman reclining on a pedestal, balancing two circular props in an abstract composition against a stark white background. A bold minimalist art piece. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-41.jpg": "Elegant fine art nude silhouette of a woman gracefully holding two geometric circular props, arching her back in a dynamic pose against a high-contrast white background. A striking study of form and movement. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-42.jpg": "Abstract fine art nude silhouette of a woman in motion, holding two circular props while leaning back dramatically, creating a sense of balance and fluidity. A captivating minimalist composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-43.jpg": "Surreal fine art nude portrait of a woman with luminous green skin and neon yellow hair, crying out against a cosmic sky filled with vibrant swirling colors. A dreamlike, emotional artistic composition. – Yugen Fine Art Photography, St. Louis.",
-        "yugen-fine-art-photography-st-louis-44.jpg": "High-fashion portrait of a woman in a metallic black gown, dramatically posed with bold blue and red lighting, creating a striking contrast of color and form. A powerful editorial fine art piece. – Yugen Fine Art Photography, St. Louis."
-      };
-
-      // Shuffle the array using the Fisher-Yates algorithm
-      function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-      }
-      shuffleArray(allImages);
-
-      // Select 10 images from the shuffled array
-      const selectedImages = allImages.slice(0, 10);
-
-      // Populate the carousel with selected images and create indicators
-      selectedImages.forEach((image, index) => {
-        const altText = altTexts[image] || "Fine art photography image";
-
-        // Create and append indicator
-        const indicator = document.createElement("li");
-        indicator.setAttribute("data-target", "#carouselExampleIndicators");
-        indicator.setAttribute("data-slide-to", index);
-        if (index === 0) {
-          indicator.classList.add("active");
-        }
-        carouselIndicators.appendChild(indicator);
-
-        // Create and append carousel item
-        const div = document.createElement("div");
-        div.className = "carousel-item" + (index === 0 ? " active" : "");
-        div.innerHTML = `<img src="${imageBasePath}${image}" alt="${altText}" class="d-block w-100">`;
-        carouselInner.appendChild(div);
-      });
-    });
-  </script>
 
 </body>
 </html>
